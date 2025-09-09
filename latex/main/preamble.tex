@@ -7,6 +7,8 @@
 % Suppress underfull/overfull hbox warnings
 \hbadness=10000
 \hfuzz=\maxdimen
+\vbadness=10000
+\vfuzz=\maxdimen
 
 % Encoding and fonts
 \usepackage{everypage-1x}
@@ -25,7 +27,6 @@
 \usepackage{longtable}
 \usepackage{wrapfig}
 \usepackage[export]{adjustbox}
-\usepackage[hidelinks]{hyperref}
 \usepackage[hidelinks]{hyperref}
 \setlength{\headheight}{53.54352pt} % Fix fancyhdr warning
 \usepackage{titlesec}
@@ -117,5 +118,8 @@
 \hypersetup{
     colorlinks=true,
     linkcolor=black,
-    urlcolor=black
+    urlcolor=black,
+    unicode=true,
+    breaklinks=true,
+    pdfstartview=FitH
 }
