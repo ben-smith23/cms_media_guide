@@ -15,7 +15,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage[protrusion=false]{microtype}       % Better typography
-\renewcommand{\familydefault}{\sfdefault} % Sans serif default
+\renewcommand{\familydefault}{\sfdefault}     % Sans serif default (CMSS)
 % =============================
 % Core packages
 % =============================
@@ -83,16 +83,22 @@
 \fancyhead[L]{\fontsize{18pt}{30pt}\selectfont \teamname}
 \fancyhead[R]{\fontsize{18pt}{30pt}\selectfont \season}
 \fancyhead[C]{\raisebox{-0.2\height}{\includegraphics[height=1cm]{\teamlogo}}}
-\fancyfoot[C]{\fontsize{12pt}{30pt}\selectfont \thepage}
-\fancyfoot[L]{\textcolor{textgray}{\currentsectiontitle}}
-\fancyfoot[R]{\textcolor{textgray}{\currentsubsectiontitle}}
+\fancyfoot[C]{\vspace{1.5cm}\fontsize{12pt}{30pt}\selectfont \thepage}
+\fancyfoot[L]{\vspace{1.5cm}\textcolor{textgray}{\currentsectiontitle}}
+\fancyfoot[R]{\vspace{1.5cm}\textcolor{textgray}{\currentsubsectiontitle}}
 \renewcommand{\headrule}{\vspace{5pt}\hrule height 0.4pt \vspace{5pt}}
 % =============================
 % Page border
 % =============================
 \newcommand\DrawPageBorder{%
 \begin{tikzpicture}[overlay, remember picture]
-\draw[teamprimary, line width=5pt] 
+% Alternate between maroon and gold based on page number
+\ifodd\thepage
+  \def\bordercolor{teamprimary}  % Maroon for odd pages
+\else
+  \def\bordercolor{teamsecondary} % Gold for even pages
+\fi
+\draw[\bordercolor, line width=5pt] 
   ($(current page.north west) + (1cm,-1cm)$) rectangle 
   ($(current page.south east) + (-1cm,1cm)$);
 \end{tikzpicture}%

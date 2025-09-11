@@ -1,17 +1,14 @@
 \begin{titlepage}
-    \centering
-    \vspace*{2cm}
-
-    % Team logo
-    %\includegraphics[width=0.35\textwidth]{\teamlogo} \\[2cm]
-
-    % Title
-    \begin{center}
-    {\Huge\bfseries \teamname}\\[0.5cm]
-    {\LARGE Swim \& Dive}\\[0.5cm]
-    {\Large \season}\\[1.5cm]
-    \end{center}
-
-    \vfill
-
+    \thispagestyle{empty}
+    
+    % Full-page title image
+    \begin{tikzpicture}[overlay, remember picture]
+        \node[anchor=center] at (current page.center) {
+            \includegraphics[width=\paperwidth, height=\paperheight, keepaspectratio=false]{../assets/TITLE.jpg}
+        };
+    \end{tikzpicture}
+    
+    % Add some content to ensure the page is created
+    \mbox{}
+    
 \end{titlepage}

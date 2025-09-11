@@ -1,5 +1,25 @@
 % chktex-file 44
 
+% Event Profile Table Macro
+\newcommand{\eventprofiletable}[2]{
+\begin{table}[H]
+\centering
+\caption*{\textbf{\textcolor{teamprimary}{#1}}}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{c | cccc | cccc}
+\toprule
+\rowcolor{teamprimary!25}
+\textbf{Year} & \multicolumn{4}{c|}{\textbf{Prelims}} & \multicolumn{4}{c}{\textbf{Finals}} \\ 
+\rowcolor{teamprimary!25}
+ & \textbf{1st} & \textbf{8th} & \textbf{9th} & \textbf{16th} & \textbf{1st} & \textbf{8th} & \textbf{9th} & \textbf{16th} \\
+\midrule
+#2
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+}
+
 % Mini table versions (for use in minipages) - Updated widths
 \newcommand{\eventtableTIMENAMEYEARMini}[2]{
 \centering
