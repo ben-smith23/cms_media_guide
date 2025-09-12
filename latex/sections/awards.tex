@@ -5,21 +5,7 @@
 % ----------------------------------------
 % CSCAA D-III NCAA All-Americans Table
 % ----------------------------------------
-\begin{longtable}{lccccc}
-\caption*{CSCAA D-III NCAA All-Americans} \\
-\toprule
-Name & Grad Year & Total & Individual & Relay & \# of Years \\
-\midrule
-\endfirsthead
-
-\toprule
-Name & Grad Year & Total & Individual & Relay & \# of Years \\
-\midrule
-\endhead
-
-\bottomrule
-\endfoot
-
+\awardstable{lccccc}{CSCAA D-III NCAA All-Americans}{\textbf{Name} & \textbf{Grad Year} & \textbf{Total} & \textbf{Individual} & \textbf{Relay} & \textbf{\# of Years}}
 Tom Harrison & 1986 & 23 & 12 & 11 & 4 \\
 Matthew Williams & 2017 & 22 & 9 & 13 & 4 \\
 Jason Reed & 2001 & 21 & 11 & 10 & 4 \\
@@ -149,23 +135,10 @@ Walker & 1979 & 1 & 0 & 1 & 1 \\
 - 800 Free Relay and 400 Free Relay in 1980 list no names.
 
 \clearpage
-\begin{longtable}{lcccr}
-\caption*{Stag Swimming and Diving Team Finishes (1965–2025)} \\
-\toprule
-Year & SCIAC Dual & SCIAC (Meet) & SCIAC Points & NCAA (Place / Points) \\
-\midrule
-\endfirsthead
-
-\toprule
-Year & SCIAC Dual & SCIAC (Meet) & SCIAC Points & NCAA (Place / Points) \\
-\midrule
-\endhead
-
-\bottomrule
-\endfoot
+\awardstable{lcccr}{Stag Swimming and Diving Team Finishes (1965–2025)}{\textbf{Year} & \textbf{SCIAC Dual} & \textbf{SCIAC (Meet)} & \textbf{SCIAC Points} & \textbf{NCAA (Place / Points)}}
 
 
-1965 & 2-2 & 3 &   & -- \\
+1965 & 2-2 & 3 &   &  \\
 1966 & 4-1 & 1 &   & 6\ldots NAIA \\
 1967 & 5-0 & 1 & 142 & 1\ldots NAIA (185) \\
 1968 & 4-0 & 1 & 430.5 & 2\ldots NAIA (279) \\
@@ -233,16 +206,19 @@ Year & SCIAC Dual & SCIAC (Meet) & SCIAC Points & NCAA (Place / Points) \\
 - Fall 2000 – La Verne joined to make a 7-team conference. \\
 - Fall 2003 – Cal Lutheran joined to make an 8-team conference. \\
 - Fall 2012 – Chapman joined to make a 9-team conference. \\
-- ``DNS'' = Did Not Swim. ``NAIA'' = National Association of Intercollegiate Athletics.
+- ``DNS'' = Did Not Swim. \\
+- `NAIA'' = National Association of Intercollegiate Athletics.
 
 \clearpage
 
 \begin{table}[htbp]
 \centering
-\caption*{Stag Swimming \& Diving Head Coaches}
-\begin{tabular}{llc}
+\caption*{\textbf{\textcolor{teamprimary}{Stag Swimming \& Diving Head Coaches}}}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{p{3cm}p{4cm}c}
 \toprule
-Years & Head Coach & \# of Seasons \\
+\rowcolor{teamprimary!25}
+\textbf{Years} & \textbf{Head Coach} & \textbf{\# of Seasons} \\
 \midrule
 1958--1959 & Jesse Cone & 1 \\
 1959--1961 & John Lepp & 2 \\
@@ -254,16 +230,19 @@ Years & Head Coach & \# of Seasons \\
 2000--2001 & Bruce Brown & 1 \\
 2001-- & Charlie Griffiths & 25* \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
-\caption*{Stag Diving Coaches}
-\begin{tabular}{llc}
+\caption*{\textbf{\textcolor{teamprimary}{Stag Diving Coaches}}}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{p{3cm}p{4cm}c}
 \toprule
-Years & Diving Coach & \# of Seasons \\
+\rowcolor{teamprimary!25}
+\textbf{Years} & \textbf{Diving Coach} & \textbf{\# of Seasons} \\
 \midrule
 1975--1986 & Donna Evans & 11 \\
 1986--1987 & Steve Evans & 1 \\
@@ -277,15 +256,19 @@ Years & Diving Coach & \# of Seasons \\
 2019--2022 & Ivan Bondarenko & 3 \\
 2022-- & Ahmed Elsayed & 4* \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
-\scriptsize
+\caption*{\textbf{\textcolor{teamprimary}{Outstanding Swimmer (MVP), Newcomer, and Most Improved by Year}}}
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{1.3}
 \begin{tabular}{clll}
 \toprule
-Year & Outstanding Swimmer (MVP) & Newcomer & Most Improved \\
+\rowcolor{teamprimary!25}
+\textbf{Year} & \textbf{Outstanding Swimmer (MVP)} & \textbf{Newcomer} & \textbf{Most Improved} \\
 \midrule
 1959 & Clark Booth/Rick Morse & Al Garner & Dave Allen \\
 1966 & Chip Hardinge &  &  \\
@@ -330,16 +313,20 @@ Year & Outstanding Swimmer (MVP) & Newcomer & Most Improved \\
 2024 & Frank Applebaum & Spencer Merodio & Jeremy Tan \\
 2025 & Lucas Lang & Kenny Eckel & Sean Su \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
-\scriptsize
+\caption*{\textbf{\textcolor{teamprimary}{Schoenfeld, Diver, and Recruiter by Year}}}
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{1.2}
 \begin{tabular}{c l l l}
 \toprule
-Year & Schoenfeld & Diver & Recruiter \\
+\rowcolor{teamprimary!25}
+\textbf{Year} & \textbf{Schoenfeld} & \textbf{Diver} & \textbf{Recruiter} \\
 \midrule
 1972 &  & Dan Kalman &  \\
 1980 & Bill Moses &  &  \\
@@ -386,17 +373,20 @@ Year & Schoenfeld & Diver & Recruiter \\
 2024 & Anderson Breazeale & Cyrus Gaylord & NA \\
 2025 & Weston Crewe & Cyrus Gaylord/Jack Griffith & NA \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
-\footnotesize
-\caption*{SCIAC Swimming/Diving Awards}
+\caption*{\textbf{\textcolor{teamprimary}{SCIAC Swimming/Diving Awards}}}
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{2}
 \begin{tabular}{c l | c l | c l}
 \toprule
-\multicolumn{2}{c|}{\textbf{Athlete of the Year}} & \multicolumn{2}{c|}{\textbf{Newcomer of the Year}} & \multicolumn{2}{c}{\textbf{Coach of the Year}} \\
+\rowcolor{teamprimary!25}
+\textbf{Year} & \textbf{Athlete of the Year} & \textbf{Year} & \textbf{Newcomer of the Year} & \textbf{Year} & \textbf{Coach of the Year} \\
 \midrule
 1969 & David Tempkin & 2014 & Matt Williams & 2015 & Charlie Griffiths \\
 1972 & Mike Thorton & 2022 & Nic Tekieli & 2023 & Charlie Griffiths \\
@@ -423,16 +413,19 @@ Year & Schoenfeld & Diver & Recruiter \\
 2017 & Matt Williams & & & & \\
 2024 & Frank Applebaum & & & & \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
-\footnotesize
-\caption*{Athlete of the Year Awards}
+\caption*{\textbf{\textcolor{teamprimary}{Athlete of the Year Awards}}}
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{1.75}
 \begin{tabular}{c l | c l | c l}
 \toprule
-\multicolumn{2}{c|}{\textbf{CMC}} & \multicolumn{2}{c|}{\textbf{HMC}} & \multicolumn{2}{c}{\textbf{CMS}} \\
+\rowcolor{teamprimary!25}
+\textbf{Year} & \textbf{CMC} & \textbf{Year} & \textbf{HMC} & \textbf{Year} & \textbf{CMS} \\
 \midrule
 1959 & Clark Booth & 1974 & Dan Kalman & 2022 & Frank Applebaum \\
 1960 & Rick Morse & 1979 & Bob Mantey/Scott Foerster & 2023 & Frank Applebaum \\
@@ -454,15 +447,19 @@ Year & Schoenfeld & Diver & Recruiter \\
 2023 & Frank Applebaum & & & & \\
 2024 & Frank Applebaum & & & & \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
-\footnotesize
+\caption*{\textbf{\textcolor{teamprimary}{Alumni \& Student-Athlete Awards}}}
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{1.5}
 \begin{tabular}{c l | c l | c l}
 \toprule
-\multicolumn{2}{c|}{\textbf{Dickinson Award}} & \multicolumn{2}{c|}{\textbf{Hank Krieger Award}} & \multicolumn{2}{c}{\textbf{CMS-SCIAC Student-Athlete}} \\
+\rowcolor{teamprimary!25}
+\textbf{Year} & \textbf{Dickinson Award} & \textbf{Year} & \textbf{Hank Krieger Award} & \textbf{Year} & \textbf{CMS-SCIAC Student-Athlete} \\
 \midrule
 1963 & Peter Lawrence & 2004 & Ryan Carpenter & 2006 & Jim Castelaz \\
 1969 & Karl Graeber & & & 2015 & Brett Berger \\
@@ -470,16 +467,19 @@ Year & Schoenfeld & Diver & Recruiter \\
 & & & & 2019 & John Everett \\
 & & & & 2024 & Frank Applebaum \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
-\small
-\caption*{NAIA Individual Champions}
+\caption*{\textbf{\textcolor{teamprimary}{NAIA Individual and Relay Champions}}}
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{1.75}
 \begin{tabular}{c l l c}
 \toprule
-Year & Name & Event & Time \\
+\rowcolor{teamprimary!25}
+\textbf{Year} & \textbf{Name/Names} & \textbf{Event} & \textbf{Time} \\
 \midrule
 1968 & Joe Busch & 200 Fly & 2:03.80 \\
 1969 & Eric Jones & 50 Free & 21.89 \\
@@ -491,17 +491,6 @@ Year & Name & Event & Time \\
 1970 & David Tempkin & 200 Fly & 1:56.90 \\
 1971 & Eric Jones & 100 Free & 48.54 \\
 1976 & William Morrow & 100 Fly & 51.83 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{table}[htbp]
-\centering
-\small
-\caption*{NAIA Relay Champions}
-\begin{tabular}{c l l c}
-\toprule
-Year & Names & Event & Time \\
 \midrule
 1967 & Busch, Durnin, Rediger, Writer & 800 Free Relay & 7:37.15 \\
 1968 & M Lee, B Leach, S Writer, R Durnin & 400 Free Relay & 3:19.40 \\
@@ -513,16 +502,19 @@ Year & Names & Event & Time \\
 1970 & Jones, Falco, Black, Tempkin & 400 Medley Relay & 3:38.43 \\
 1971 & B Black, J Oblath, M Lee, E Jones & 400 Free Relay & 3:13.82 \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
-\small
-\caption*{NCAA D-III Individual Champions}
+\caption*{\textbf{\textcolor{teamprimary}{NCAA D-III Individual and Relay Champions}}}
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{1.2}
 \begin{tabular}{c l l c}
 \toprule
-Year & Name & Event & Time \\
+\rowcolor{teamprimary!25}
+\textbf{Year} & \textbf{Name/Names} & \textbf{Event} & \textbf{Time} \\
 \midrule
 1982 & Doug Jones & 500 Free & 4:33.68 \\
 1982 & Doug Jones & 100 Back & 52.04 \\
@@ -551,56 +543,38 @@ Year & Name & Event & Time \\
 2022 & Frank Applebaum & 200 Fly & 1:44.01 \\
 2023 & Frank Applebaum & 200 Fly & 1:43.96 \\
 2024 & Lucas Lang & 1650 Free & 15:17.48 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{table}[htbp]
-\centering
-\small
-\caption*{NCAA D-III Relay Champions}
-\begin{tabular}{c l l c}
-\toprule
-Year & Names & Event & Time \\
 \midrule
 1983 & D. Jones, N. Bagatelos, T. Harrison, B. Johnson & 400 Free Relay & 3:03.10 \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
-\small
-\caption*{NCAA Swimmer of the Year}
-\begin{tabular}{c l}
+\caption*{\textbf{\textcolor{teamprimary}{NCAA Swimmer and Coach of the Year}}}
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{c l | c l}
 \toprule
-Year & Name \\
+\rowcolor{teamprimary!25}
+\textbf{Year} & \textbf{Swimmer of the Year} & \textbf{Year} & \textbf{Coach of the Year} \\
 \midrule
-1997 & Gary Simon \\
+1997 & Gary Simon & 1983 & Mike Sutton \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
 \begin{table}[htbp]
 \centering
-\small
-\caption*{NCAA Coach of the Year}
-\begin{tabular}{c l}
-\toprule
-Year & Name \\
-\midrule
-1983 & Mike Sutton \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{table}[htbp]
-\centering
-\small
-\caption*{CMS Athletics Hall of Fame}
+\caption*{\textbf{\textcolor{teamprimary}{CMS Athletics Hall of Fame}}}
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{2}
 \begin{tabular}{l c c}
 \toprule
-Name & College/Year & Year Inducted \\
+\rowcolor{teamprimary!25}
+\textbf{Name} & \textbf{College/Year} & \textbf{Year Inducted} \\
 \midrule
 Eric Jones & CMC 71 & 1991 \\
 Chip Hardinge & CMC 67 & 1994 \\
@@ -615,91 +589,69 @@ Mike Sutton & CMC 76 & 2016 \\
 Todd McKenzie & CMC 88 & 2019 \\
 Jason Reed & CMC 01 & 2022 \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
-\begin{table}[htbp]
+\clearpage
+\begin{table}[H]
 \centering
-\small
-\caption*{CMS Scholar-Athlete ``Wall of Fame'' Award \\ 
-First Team All-SCIAC (individual champion) and graduates with 3.0 or better GPA}
-\begin{tabular}{c l c}
+\caption*{\textbf{\textcolor{teamprimary}{CMS Scholar-Athlete ``Wall of Fame'' Award}}}
+\caption*{\small First Team All-SCIAC (individual champion) and graduates with 3.0 or better GPA}
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{c l c | c l c}
 \toprule
-Year & Name & School \\
+\rowcolor{teamprimary!25}
+\textbf{Year} & \textbf{Name} & \textbf{School} & \textbf{Year} & \textbf{Name} & \textbf{School} \\
 \midrule
-1969 & Karl Graeber & CMC \\
-1970 & Joe Busch III & CMC \\
-1970 & Eric ``Rick'' James & CMC \\
-1972 & David Tempkin & CMC \\
-1973 & Richard Esterkin & CMC \\
-1974 & Dan Kalman & HMC \\
-1974 & Barry McCown & CMC \\
-1975 & Scott Lichtig & CMC \\
-1975 & Myler ``Bo'' Schoenfeld & CMC \\
-1976 & Tom Kolepp & CMC \\
-1976 & Jack Pearce & CMC \\
-1977 & Mike Blatt & CMC \\
-1977 & Jon Gudman & CMC \\
-1980 & Herb Bowman & CMC \\
-1983 & Jim Rozycki & CMC \\
-1986 & Nick Bagatelos & CMC \\
-1986 & Ned Busch & CMC \\
-1987 & Eric Ryba & HMC \\
-1988 & Ed Smith & CMC \\
-1989 & Erik Jensen & CMC \\
-1990 & Kirk Peacock & CMC \\
-1992 & Paul Daigle & CMC \\
-1992 & Mike Tolfree & CMC \\
-1993 & Erik Zech & CMC \\
-1996 & Mike Eberhardt & CMC \\
-1997 & Chris Derr & CMC \\
-1998 & Tyler Olson & CMC \\
-1998 & Brian Ruark & CMC \\
-2000 & Kris Jurka & HMC \\
-2001 & Garret Yamaguchi & CMC \\
-2002 & Patrick Crowley & CMC \\
-2004 & Ryan Carpenter & HMC \\
-2006 & Christian Wolfgruber & CMC \\
-2007 & Mark Emanuel & HMC \\
-2008 & Eric Moorhead & CMC \\
-2008 & Tyler Owens & CMC \\
-2009 & Ryan Toohey & CMC \\
-2011 & Nick Ostreim & CMC \\
-2012 & Austin Hallett & CMC \\
-2012 & Vincent Pai & HMC \\
-2013 & Jordan Lieberman & CMC \\
-2013 & Blake Weber & CMC \\
-2015 & Brett Berger & HMC \\
-2015 & Alex Mendoza & CMC \\
-2015 & Patrick Shultz & CMC \\
-2015 & James Stevick & CMC \\
-2015 & Cameron Whiting & CMC \\
-2016 & Joey Hinton & CMC \\
-2016 & Alex Poltash & CMC \\
-2016 & Matt Valentine & HMC \\
-2017 & Graham Spurzem & CMC \\
-2017 & Matt Williams & CMC \\
-2018 & Patrick Quarberg & CMC \\
-2019 & John Everett & CMC \\
-2019 & Aaron Lutzker & CMC \\
-2020 & Ben Culberson & CMC \\
-2020 & Kendall Hollimon & CMC \\
-2020 & Henry Limm & HMC \\
-2022 & Marco Conati & HMC \\
-2024 & Frank Applebaum & CMC \\
-2024 & Anderson Breazeale & CMC \\
+1969 & Karl Graeber & CMC & 2001 & Garret Yamaguchi & CMC \\
+1970 & Joe Busch III & CMC & 2002 & Patrick Crowley & CMC \\
+1970 & Eric ``Rick'' James & CMC & 2004 & Ryan Carpenter & HMC \\
+1972 & David Tempkin & CMC & 2006 & Christian Wolfgruber & CMC \\
+1973 & Richard Esterkin & CMC & 2007 & Mark Emanuel & HMC \\
+1974 & Dan Kalman & HMC & 2008 & Eric Moorhead & CMC \\
+1974 & Barry McCown & CMC & 2008 & Tyler Owens & CMC \\
+1975 & Scott Lichtig & CMC & 2009 & Ryan Toohey & CMC \\
+1975 & Myler ``Bo'' Schoenfeld & CMC & 2011 & Nick Ostreim & CMC \\
+1976 & Tom Kolepp & CMC & 2012 & Austin Hallett & CMC \\
+1976 & Jack Pearce & CMC & 2012 & Vincent Pai & HMC \\
+1977 & Mike Blatt & CMC & 2013 & Jordan Lieberman & CMC \\
+1977 & Jon Gudman & CMC & 2013 & Blake Weber & CMC \\
+1980 & Herb Bowman & CMC & 2015 & Brett Berger & HMC \\
+1983 & Jim Rozycki & CMC & 2015 & Alex Mendoza & CMC \\
+1986 & Nick Bagatelos & CMC & 2015 & Patrick Shultz & CMC \\
+1986 & Ned Busch & CMC & 2015 & James Stevick & CMC \\
+1987 & Eric Ryba & HMC & 2015 & Cameron Whiting & CMC \\
+1988 & Ed Smith & CMC & 2016 & Joey Hinton & CMC \\
+1989 & Erik Jensen & CMC & 2016 & Alex Poltash & CMC \\
+1990 & Kirk Peacock & CMC & 2016 & Matt Valentine & HMC \\
+1992 & Paul Daigle & CMC & 2017 & Graham Spurzem & CMC \\
+1992 & Mike Tolfree & CMC & 2017 & Matt Williams & CMC \\
+1993 & Erik Zech & CMC & 2018 & Patrick Quarberg & CMC \\
+1996 & Mike Eberhardt & CMC & 2019 & John Everett & CMC \\
+1997 & Chris Derr & CMC & 2019 & Aaron Lutzker & CMC \\
+1998 & Tyler Olson & CMC & 2020 & Ben Culberson & CMC \\
+1998 & Brian Ruark & CMC & 2020 & Kendall Hollimon & CMC \\
+2000 & Kris Jurka & HMC & 2020 & Henry Limm & HMC \\
+& & & 2022 & Marco Conati & HMC \\
+& & & 2024 & Frank Applebaum & CMC \\
+& & & 2024 & Anderson Breazeale & CMC \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
-\begin{table}[htbp]
-    \centering
-    \small
-    \caption*{CSCAA Scholar All-American (2002--2024)}
-    \begin{tabular}{c p{0.75\textwidth}}
-    \toprule
-    Year & Name \\
-    \midrule
+\begin{table}[H]
+\centering
+\caption*{\textbf{\textcolor{teamprimary}{CSCAA Scholar All-American (2002--2024)}}}
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{c p{0.75\textwidth}}
+\toprule
+\rowcolor{teamprimary!25}
+\textbf{Year} & \textbf{Name} \\
+\midrule
     2004 & Ryan Carpenter \\
     2005 & Ryan Greene, Christian Wolfgruber \\
     2006 & Christian Wolfgruber \\
@@ -719,28 +671,16 @@ Year & Name & School \\
     2022 & Frank Applebaum, Anderson Breazeale, Marco Conati, Cyrus Gaylord, Theo Johnson, Dylan Krueger, Walter Limm, Eric Workman. (2nd team: Matthew Choi, Ben B Smith, Ben J Smith, Alec Vercruysse) \\
     2023 & Frank Applebaum (2nd team: Henrik Barck, Anderson Breazeale, Thayer Breazeale, Ethan Sattley) \\
     2024 & Frank Applebaum, Anderson Breazeale, Dylan Krueger, Theo Johnson (2nd team: Henrik Barck, Bennet Matazzoni) \\
-    \bottomrule
-    \end{tabular}
-    \end{table}
+\bottomrule
+\end{tabular}%
+}
+\end{table}
     
 
 
-\subsection{Athenas}
+\subsection{Athenas} \clearpage
 
-\begin{longtable}{lccccc}
-\caption*{CSCAA D-III NCAA All-Americans} \\
-\toprule
-Name & Grad Year & Total & Individual & Relay & \# of Years \\
-\midrule
-\endfirsthead
-
-\toprule
-Name & Grad Year & Total & Individual & Relay & \# of Years \\
-\midrule
-\endhead
-
-\bottomrule
-\endfoot
+\awardstable{lccccc}{CSCAA D-III NCAA All-Americans}{\textbf{Name} & \textbf{Grad Year} & \textbf{Total} & \textbf{Individual} & \textbf{Relay} & \textbf{\# of Years}}
 
 Katie Bilotti & 2012 & 20 & 7 & 13 & 4 \\
 Lisal Smith & 2007 & 16 & 7 & 9 & 4 \\
@@ -826,81 +766,86 @@ Allyson Yao & 2024 & 1 & 1 & 0 & 1 \\
 Sammy Ennis & 2025 & 1 & 0 & 1 & 1 \\
 Kelly Prawira & 2025 & 1 & 0 & 1 & 3 \\
 Milan Manfredi & 2027 & 1 & 0 & 1 & 1 \\
+\bottomrule
 \end{longtable}
 
 
-\begin{longtable}{lccccc}
-\caption*{Athena Team Finishes} \\
+\begin{longtable}{lcccr}
+\caption*{\textbf{\textcolor{teamprimary}{Athena Swimming and Diving Team Finishes (1977–2025)}}} \\
 \toprule
-Year & SCIAC Dual & SCIAC (Champ) & Points & NCAA & NCAA Points \\
+\textbf{Year} & \textbf{SCIAC Dual} & \textbf{SCIAC (Meet)} & \textbf{SCIAC Points} & \textbf{NCAA (Place / Points)} \\
 \midrule
 \endfirsthead
 
 \toprule
-Year & SCIAC Dual & SCIAC (Champ) & Points & NCAA & NCAA Points \\
+\rowcolor{teamprimary!25}
+\textbf{Year} & \textbf{SCIAC Dual} & \textbf{SCIAC (Meet)} & \textbf{SCIAC Points} & \textbf{NCAA (Place / Points)} \\
 \midrule
 \endhead
 
 \bottomrule
 \endfoot
 
-1977 &  & 2 & 315 & DNS &  \\
-1978 &  & 2 & 320 & DNS &  \\
-1979 &  & 4 & 214 & DNS &  \\
-1980 &  & 2 & 270 & DNS &  \\
-1981 & 3-2 & 2 & 383 & DNS &  \\
-1982 & 4-1 & 3 & 408 & 19 & 37 \\
-1983 & 4-1 & 2 & 391 & DNS &  \\
-1984 & 3-2 & 3 & 315.5 & DNS &  \\
-1985 & 3-2 & 3 & 440 & DNS &  \\
-1986 & 2-1 & 2 & 629 & 49 & 1 \\
-1987 & 3-2 & 2 & 643 & DNS &  \\
-1988 & 5-0 & 2 & 908 & 11 & 116.5 \\
-1989 & 4-1 & 1 & ? & 18 & ? \\
-1990 & 4-1 & 2 & 479 & DNS &  \\
-1991 & 4-1 & 2 & 521 & 40 & 6 \\
-1992 & 4-1 & 3 & 392 & DNS &  \\
-1993 & 3-2 & 4 & 373 & DNS &  \\
-1994 & 4-1 & 2 & 502.5 & 46 & 2 \\
-1995 & 4-1 & 1 & 658 & DNS &  \\
-1996 & 5-0 & 1 & 697 & 46 & 5 \\
-1997 & 5-0 & 2 & 609 & 11 & 93 \\
-1998 & 3-2 & 2 & 527 & 46 & 4 \\
-1999 & 6-0 & 1 & 564.5 & 16 & 62 \\
-2000 & 4-2 & 2 & 610.5 & 26 & 22 \\
-2001 & 4-2 & 3 & 700 & 26 & 28 \\
-2002 & 5-1 & 3 & 587.5 & 15 & 67 \\
-2003 & 5-1 & 1 & 811 & DNS &  \\
-2004 & 6-0 & 1 & 897.5 & 11 & 97 \\
-2005 & 7-0 & 1 & 993.5 & DNS &  \\
-2006 & 7-0 & 1 & 1132 & 9 & 139 \\
-2007 & 7-0 & 1 & 994 & 14 & 69 \\
-2008 & 7-0 & 1 & 938 & 14 & 71 \\
-2009 & 7-0 & 1 & 1004.5 & 6 & 174 \\
-2010 & 7-0 & 1 & 1026 & 5 & 177 \\
-2011 & 7-0 & 1 & 1072.5 & 7 & 133 \\
-2012 & 7-0 & 1 & 1075.5 & 9 & 114 \\
-2013 & 8-0 & 1 & 919 & DNS &  \\
-2014 & 8-0 & 1 & 1152.5 & 13 & 82 \\
-2015 & 8-0 & 1 & 1153 & 16 & 60 \\
-2016 & 7-1 & 2 & 964 & DNS &  \\
-2017 & 8-0 & 1 & 1289 & 21 & 36 \\
-2018 & 7-1 & 2 & 1015 & 19 & 34 \\
-2019 & 8-0 & 2 & 1071.5 & 22 & 34 \\
-2020 & 8-0 & 1 & 1196 & Canceled & Canceled \\
-2022 & 6-1 & 2 & 1141 & 11 & 156.5 \\
-2023 & 7-1 & 1 & 989 & 13 & 74 \\
-2024 & 7-1 & 2 & 911 & 25 & 26 \\
-2025 & 7-1 & 2 & 886 & 16 & 56 \\
+1977 &  & 2 & 315 & DNS \\
+1978 &  & 2 & 320 & DNS \\
+1979 &  & 4 & 214 & DNS \\
+1980 &  & 2 & 270 & DNS \\
+1981 & 3-2 & 2 & 383 & DNS \\
+1982 & 4-1 & 3 & 408 & 19 (37) \\
+1983 & 4-1 & 2 & 391 & DNS \\
+1984 & 3-2 & 3 & 315.5 & DNS \\
+1985 & 3-2 & 3 & 440 & DNS \\
+1986 & 2-1 & 2 & 629 & 49 (1) \\
+1987 & 3-2 & 2 & 643 & DNS \\
+1988 & 5-0 & 2 & 908 & 11 (116.5) \\
+1989 & 4-1 & 1 & ? & 18 (?) \\
+1990 & 4-1 & 2 & 479 & DNS \\
+1991 & 4-1 & 2 & 521 & 40 (6) \\
+1992 & 4-1 & 3 & 392 & DNS \\
+1993 & 3-2 & 4 & 373 & DNS \\
+1994 & 4-1 & 2 & 502.5 & 46 (2) \\
+1995 & 4-1 & 1 & 658 & DNS \\
+1996 & 5-0 & 1 & 697 & 46 (5) \\
+1997 & 5-0 & 2 & 609 & 11 (93) \\
+1998 & 3-2 & 2 & 527 & 46 (4) \\
+1999 & 6-0 & 1 & 564.5 & 16 (62) \\
+2000 & 4-2 & 2 & 610.5 & 26 (22) \\
+2001 & 4-2 & 3 & 700 & 26 (28) \\
+2002 & 5-1 & 3 & 587.5 & 15 (67) \\
+2003 & 5-1 & 1 & 811 & DNS \\
+2004 & 6-0 & 1 & 897.5 & 11 (97) \\
+2005 & 7-0 & 1 & 993.5 & DNS \\
+2006 & 7-0 & 1 & 1132 & 9 (139) \\
+2007 & 7-0 & 1 & 994 & 14 (69) \\
+2008 & 7-0 & 1 & 938 & 14 (71) \\
+2009 & 7-0 & 1 & 1004.5 & 6 (174) \\
+2010 & 7-0 & 1 & 1026 & 5 (177) \\
+2011 & 7-0 & 1 & 1072.5 & 7 (133) \\
+2012 & 7-0 & 1 & 1075.5 & 9 (114) \\
+2013 & 8-0 & 1 & 919 & DNS \\
+2014 & 8-0 & 1 & 1152.5 & 13 (82) \\
+2015 & 8-0 & 1 & 1153 & 16 (60) \\
+2016 & 7-1 & 2 & 964 & DNS \\
+2017 & 8-0 & 1 & 1289 & 21 (36) \\
+2018 & 7-1 & 2 & 1015 & 19 (34) \\
+2019 & 8-0 & 2 & 1071.5 & 22 (34) \\
+2020 & 8-0 & 1 & 1196 & Canceled \\
+2022 & 6-1 & 2 & 1141 & 11 (156.5) \\
+2023 & 7-1 & 1 & 989 & 13 (74) \\
+2024 & 7-1 & 2 & 911 & 25 (26) \\
+2025 & 7-1 & 2 & 886 & 16 (56) \\
+\bottomrule
 \end{longtable}
 
-
+\clearpage
 \begin{table}[htbp]
 \centering
-\caption*{Head Coaches}
-\begin{tabular}{lcc}
+\caption*{\textbf{\textcolor{teamprimary}{Athena Swimming \& Diving Head Coaches}}}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{p{3cm}p{4cm}c}
 \toprule
-Years & Head Coach & \# of Seasons \\
+\rowcolor{teamprimary!25}
+\textbf{Years} & \textbf{Head Coach} & \textbf{\# of Seasons} \\
 \midrule
 1976--1979 & Page Remillard & 3 \\
 1979--1980 & Mike Sutton & 1 \\
@@ -912,15 +857,18 @@ Years & Head Coach & \# of Seasons \\
 2000--2001 & Bruce Brown & 1 \\
 2001-- & Charlie Griffiths & 25* \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
-\caption*{Diving Coaches}
-\begin{tabular}{lcc}
+\caption*{\textbf{\textcolor{teamprimary}{Athena Diving Coaches}}}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{p{3cm}p{4cm}c}
 \toprule
-Years & Diving Coach & \# of Seasons \\
+\rowcolor{teamprimary!25}
+\textbf{Years} & \textbf{Diving Coach} & \textbf{\# of Seasons} \\
 \midrule
 1975--1986 & Donna Evans & 11 \\
 1986--1987 & Steve Evans & 1 \\
@@ -934,16 +882,19 @@ Years & Diving Coach & \# of Seasons \\
 2019--2022 & Ivan Bondarenko & 3 \\
 2022-- & Ahmed Elsayed & 4* \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
-\caption*{Outstanding Swimmer (MVP), Newcomer, and Most Improved by Year}
-\scriptsize
-\begin{tabular}{llll}
+\caption*{\textbf{\textcolor{teamprimary}{Outstanding Swimmer (MVP), Newcomer, and Most Improved by Year}}}
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{1.7}
+\begin{tabular}{c | l | l | l}
 \toprule
-Year & Outstanding Swimmer (MVP) & Newcomer & Most Improved \\
+\rowcolor{teamprimary!25}
+\textbf{Year} & \textbf{Outstanding Swimmer (MVP)} & \textbf{Newcomer} & \textbf{Most Improved} \\
 \midrule
 1983 & Hillary Schrier & Dana Silkensen & Julie Froehlig \\
 1991 & Janine Jergensen & & \\
@@ -980,16 +931,19 @@ Year & Outstanding Swimmer (MVP) & Newcomer & Most Improved \\
 2024 & Katy Shaw & Corley Smith & Madeleine Kan / Anna Zeren \\
 2025 & Mackenzie Mayfield & Avalon Sanders & Josie Kearns \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
-\caption*{Schoenfeld/Critchell (05), Diver, and Recruiter by Year}
-\scriptsize
-\begin{tabular}{llll}
+\caption*{\textbf{\textcolor{teamprimary}{Schoenfeld/Critchell (05), Diver, and Recruiter by Year}}}
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{c | l | l | l}
 \toprule
-Year & Schoenfeld/Critchell (05) & Diver & Recruiter \\
+\rowcolor{teamprimary!25}
+\textbf{Year} & \textbf{Schoenfeld/Critchell (05)} & \textbf{Diver} & \textbf{Recruiter} \\
 \midrule
 1980 & Elena Straub & & \\
 1982 & Terie Mueller & & \\
@@ -1035,41 +989,48 @@ Year & Schoenfeld/Critchell (05) & Diver & Recruiter \\
 2024 & Allyson Yao & Meilan Uyeno & \\
 2025 & Kelly Prawira & Izzy Doud & \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
-\caption*{SCIAC Swimming/Diving Athlete of the Year (1977–Present, Diving separated 2018)}
-\begin{tabular}{lc}
+\caption*{\textbf{\textcolor{teamprimary}{SCIAC Swimming/Diving Awards}}}
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{c l | c l | c l}
 \toprule
-Year & Name \\
+\rowcolor{teamprimary!25}
+\textbf{Year} & \textbf{Athlete of the Year} & \textbf{Year} & \textbf{Newcomer of the Year} & \textbf{Year} & \textbf{Coach of the Year} \\
 \midrule
-1988 & Shelly Ries \\
-1994 & Jennifer See \\
-1996 & Diane McGimsey \\
-1997 & Maggie Wang \\
-2000 & Lauren Williams \\
-2001 & Suzy Nicoletti \\
-2002 & Lauren Williams \\
-2004 & Lisal Smith \\
-2008 & Annie Perizzolo \\
-2009 & Katie Bilotti \\
-2011 & Michele Kee \\
-2012 & Michele Kee \\
-2016 & Stephanie Doi \\
-2019 & Augusta Lewis \\
-2020 & Augusta Lewis \\
+1988 & Shelly Ries & 2017 & Jocelyn Crawford & 2017 & Charlie Griffiths \\
+1994 & Jennifer See & 2019 & Augusta Lewis & 2020 & Charlie Griffiths \\
+1996 & Diane McGimsey & 2020 & Ella Blake & & \\
+1997 & Maggie Wang & 2023 & Katy Shaw & & \\
+2000 & Lauren Williams & & & & \\
+2001 & Suzy Nicoletti & & & & \\
+2002 & Lauren Williams & & & & \\
+2004 & Lisal Smith & & & & \\
+2008 & Annie Perizzolo & & & & \\
+2009 & Katie Bilotti & & & & \\
+2011 & Michele Kee & & & & \\
+2012 & Michele Kee & & & & \\
+2016 & Stephanie Doi & & & & \\
+2019 & Augusta Lewis & & & & \\
+2020 & Augusta Lewis & & & & \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
-\caption*{SCIAC Diver of the Year (2018–Present)}
-\begin{tabular}{lc}
+\caption*{\textbf{\textcolor{teamprimary}{SCIAC Diver of the Year (2018–Present)}}}
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{c l}
 \toprule
-Year & Name \\
+\rowcolor{teamprimary!25}
+\textbf{Year} & \textbf{Name} \\
 \midrule
 2023 & Emma Ng Pack \\
 2025 & Izzy Doud \\
@@ -1077,123 +1038,82 @@ Year & Name \\
 \end{tabular}
 \end{table}
 
-\begin{table}[htbp]
+
+
+\begin{table}[H]
 \centering
-\caption*{SCIAC Swimming/Diving Newcomer of the Year (2014–Present)}
-\begin{tabular}{lc}
+\caption*{\textbf{\textcolor{teamprimary}{Athlete of the Year Awards}}}
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{1.75}
+\begin{tabular}{c l | c l | c l}
 \toprule
-Year & Name \\
+\rowcolor{teamprimary!25}
+\textbf{Year} & \textbf{CMC} & \textbf{Year} & \textbf{HMC} & \textbf{Year} & \textbf{Scripps} \\
 \midrule
-2017 & Jocelyn Crawford \\
-2019 & Augusta Lewis \\
-2020 & Ella Blake \\
-2023 & Katy Shaw \\
+1983 & Teri Mueller & 2008 & Jenni Rinker & 1982 & Brett Eppich \\
+1994 & Jennifer See & & & 1983 & Ginger Gearhart \\
+1997 & Maggie Wang & & & 1991 & Rebecca Lynn Hebert \\
+2002 & Suzy Nicoletti & & & 1992 & Rebecca Lynn Hebert \\
+2004 & Lisal Smith & & & 1996 & Elena Goss \\
+2007 & Lisal Smith & & & 2003 & Tracy Winters \\
+2008 & Annie Perizzolo & & & 2007 & Emily Rees \\
+2009 & Annie Perizzolo & & & 2019 & Emma Stacy \\
+2010 & Annie Perizzolo & & & 2022 & Ava Sealander \\
+2022 & Augusta Lewis & & & & \\
+2023 & Augusta Lewis & & & & \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
-\caption*{SCIAC Swimming/Diving Coach of the Year (2015–Present)}
-\begin{tabular}{lc}
+\caption*{\textbf{\textcolor{teamprimary}{Alumni \& Student-Athlete Awards}}}
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{c l | c l | c l}
 \toprule
-Year & Name \\
+\rowcolor{teamprimary!25}
+\textbf{Year} & \textbf{Hank Krieger Award} & \textbf{Year} & \textbf{Dickinson Award} & \textbf{Year} & \textbf{Boucquey Award} \\
 \midrule
-2017 & Charlie Griffiths \\
-2020 & Charlie Griffiths \\
+2008 & Kevyn Klein & 2015 & LillyBelle Deer & 2010 & Clair Geary \\
+2009 & Jordan Stewart & & & 2017 & Mary Lynn Clark \\
+2011 & Tessa Dover & & & 2018 & Maia Presti \\
+& & & & 2019 & Emma Stacy \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
-\begin{table}[htbp]
-\centering
-\caption*{CMC Athlete of the Year}
-\begin{tabular}{lc}
-\toprule
-Year & Name \\
-\midrule
-1983 & Teri Mueller \\
-1994 & Jennifer See \\
-1997 & Maggie Wang \\
-2002 & Suzy Nicoletti \\
-2004 & Lisal Smith \\
-2007 & Lisal Smith \\
-2008 & Annie Perizzolo \\
-2009 & Annie Perizzolo \\
-2010 & Annie Perizzolo \\
-2022 & Augusta Lewis \\
-2023 & Augusta Lewis \\
-\bottomrule
-\end{tabular}
-\end{table}
+\begin{table}[H]
+    \centering
+    \caption*{\textbf{\textcolor{teamprimary}{Special Awards}}}
+    \resizebox{\textwidth}{!}{%
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{c l | c l | c l}
+    \toprule
+    \rowcolor{teamprimary!25}
+    \textbf{Year} & \textbf{Fulbright Award} & \textbf{Year} & \textbf{CMS-SCIAC Student-Athlete} & \textbf{Year} & \textbf{NCAA Elite 88} \\
+    \midrule
+    2005 & Cassi Wright '03 & 2007 & Amy Jarvis & 2010 & Tessa Dover \\
+    2006 & Alli Lathrope & 2011 & Tessa Dover & 2011 & Tessa Dover \\
+    & & 2013 & Kristie Howard & & \\
+    & & 2014 & Dana Shaker & & \\
+    \bottomrule
+    \end{tabular}%
+    }
+    \end{table}
 
-\begin{table}[htbp]
+\clearpage
+\begin{table}[H]
 \centering
-\caption*{HMC Athlete of the Year}
-\begin{tabular}{lc}
+\caption*{\textbf{\textcolor{teamprimary}{NCAA D-III Individual Champions}}}
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{c l l c}
 \toprule
-Year & Name \\
-\midrule
-2008 & Jenni Rinker \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{table}[htbp]
-\centering
-\caption*{Scripps Alumnae Athlete of the Year}
-\begin{tabular}{lc}
-\toprule
-Year & Name \\
-\midrule
-1982 & Brett Eppich \\
-1983 & Ginger Gearhart \\
-1991 & Rebecca Lynn Hebert \\
-1992 & Rebecca Lynn Hebert \\
-1996 & Elena Goss \\
-2003 & Tracy Winters \\
-2007 & Emily Rees \\
-2019 & Emma Stacy \\
-2022 & Ava Sealander \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{table}[htbp]
-\centering
-\caption*{Hank Krieger Award \& Dickinson Award}
-\begin{tabular}{lclc}
-\toprule
-Year & Name & Year & Name \\
-\midrule
-2008 & Kevyn Klein & 2015 & LillyBelle Deer \\
-2009 & Jordan Stewart & & \\
-2011 & Tessa Dover & & \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{table}[htbp]
-\centering
-\caption*{Boucquey (Scripps) Outstanding Scholar-Athlete Award}
-\begin{tabular}{lc}
-\toprule
-Year & Name \\
-\midrule
-2010 & Clair Geary \\
-2017 & Mary Lynn Clark \\
-2018 & Maia Presti \\
-2019 & Emma Stacy \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{table}[htbp]
-\centering
-\caption*{NCAA D-III Champions (Individual)}
-\begin{tabular}{lccc}
-\toprule
-Year & Name & Event & Time \\
+\rowcolor{teamprimary!25}
+\textbf{Year} & \textbf{Name} & \textbf{Event} & \textbf{Time} \\
 \midrule
 2002 & Suzy Nicoletti & 200 Breast & 2:21.17 \\
 2004 & Lisal Smith & 400 IM & 4:27.18 \\
@@ -1201,15 +1121,19 @@ Year & Name & Event & Time \\
 2010 & Annie Perizzolo & 200 Breast & 2:14.83 \\
 2023 & Augusta Lewis & 400 IM & 4:15.73 \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
 \begin{table}[htbp]
 \centering
-\caption*{CMS Athletics Hall of Fame}
-\begin{tabular}{lcc}
+\caption*{\textbf{\textcolor{teamprimary}{CMS Athletics Hall of Fame}}}
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{l c c}
 \toprule
-Name & College/Year & Year Inducted \\
+\rowcolor{teamprimary!25}
+\textbf{Name} & \textbf{College/Year} & \textbf{Year Inducted} \\
 \midrule
 Jenn See & CMC 94 & 2011 \\
 Maggie Wang & CMC 97 & 2014 \\
@@ -1218,174 +1142,105 @@ Lisal Smith Moran & CMC 07 & 2022 \\
 Suzy Nicoletti & CMC 02 & 2023 \\
 Lauren Williams & CMC 02 & 2024 \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
+        
 
 \clearpage
-\begin{longtable}{l l l}
-    \caption*{CMS Scholar-Athlete "Wall of Fame" Award (First Team All-SCIAC, 3.0+ GPA)} \\
+\begin{table}[H]
+    \centering
+    \caption*{\textbf{\textcolor{teamprimary}{CMS Scholar-Athlete ``Wall of Fame'' Award}}}
+    \caption*{\small First Team All-SCIAC (individual champion) and graduates with 3.0 or better GPA}
+    \resizebox{\textwidth}{!}{%
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{c l c | c l c}
     \toprule
-    Year & Name & School \\
+    \rowcolor{teamprimary!25}
+    \textbf{Year} & \textbf{Name} & \textbf{School} & \textbf{Year} & \textbf{Name} & \textbf{School} \\
     \midrule
-    \endfirsthead
     
-    \toprule
-    Year & Name & School \\
-    \midrule
-    \endhead
-    
+    1982 & Brett Eppich & SCR & 2011 & Carliann Brashier & CMC \\
+    1982 & Carol "Cokey" Gilbert & SCR & 2011 & Tessa Dover & CMC \\
+    1983 & Ginger Gearhart & SCR & 2011 & Annie Perizzolo & CMC \\
+    1988 & Lorry Lynn & SCR & 2011 & Jenni Rinker & HMC \\
+    1988 & Pam Tanase & CMC & 2011 & Heidi Wolfgruber & CMC \\
+    1991 & Kate Beeson & SCR & 2012 & Katie Bilotti & CMC \\
+    1992 & Rebecca Hebert & SCR & 2012 & Whitney Dawson & CMC \\
+    1993 & Julia Altrocchi & CMC & 2012 & Emma Jones & CMC \\
+    1994 & Jennifer See & CMC & 2013 & Carmen Lundell & CMC \\
+    1996 & Elena Goss & SCR & 2013 & Emily Ott & CMC \\
+    1997 & Margaret Wang & CMC & 2014 & Annika Jessen & CMC \\
+    1997 & Julie Sutor & HMC & 2014 & Michele Kee & CMC \\
+    1998 & Shelly Fujikawa & HMC & 2014 & Helen Liu & CMC \\
+    1999 & Diane McGimsey & CMC & 2015 & LillyBelle Deer & CMC \\
+    2000 & Catherine Norris & SCR & 2015 & Louisa Dunwiddie & CMC \\
+    2001 & Rachel Pickens & CMC & 2017 & Stephanie Doi & CMC \\
+    2002 & Suzy Nicoletti & CMC & 2017 & Carli Lessard & HMC \\
+    2002 & Lauren Williams & CMC & 2017 & Emily McKinnon & CMC \\
+    2003 & Cassi Wright & CMC & 2017 & Kelly Ngo & CMC \\
+    2005 & Clare Hudson & CMC & 2018 & Lizzie Carrade & CMC \\
+    2005 & Michelle Phillips & CMC & 2018 & Lorea Gwo & CMC \\
+    2006 & Kelci Barnes & CMC & 2018 & Maia Presti & SCR \\
+    2006 & Linh Luong & CMC & 2020 & Claire Bacon-Brenes & SCR \\
+    2007 & Amy Fuller & CMC & 2020 & Ivy Chen & HMC \\
+    2007 & Lauren Kristensen & CMC & 2020 & Jocelyn Crawford & CMC \\
+    2007 & Lisal Smith & CMC & 2021 & Mia Syme & CMC \\
+    2008 & Erica Anderson & CMC & 2022 & Ava Sealander & SCR \\
+    2008 & Monica Emanuel & CMC & 2023 & Ella Blake & HMC \\
+    2008 & Alissa Sole & CMC & 2023 & Gracey Hiebert & HMC \\
+    2009 & Danielle Peebles & CMC & 2023 & Augusta Lewis & CMC \\
+    2009 & Kendall Snyder & CMC & 2023 & Jameson Mitchum & CMC \\
+    2009 & Jordan Stewart & CMC & 2024 & Emma Ng Pack & CMC \\
     \bottomrule
-    \endfoot
-    
-    1982 & Brett Eppich & SCR \\
-    1982 & Carol "Cokey" Gilbert & SCR \\
-    1983 & Ginger Gearhart & SCR \\
-    1988 & Lorry Lynn & SCR \\
-    1988 & Pam Tanase & CMC \\
-    1991 & Kate Beeson & SCR \\
-    1992 & Rebecca Hebert & SCR \\
-    1993 & Julia Altrocchi & CMC \\
-    1994 & Jennifer See & CMC \\
-    1996 & Elena Goss & SCR \\
-    1997 & Margaret Wang & CMC \\
-    1997 & Julie Sutor & HMC \\
-    1998 & Shelly Fujikawa & HMC \\
-    1999 & Diane McGimsey & CMC \\
-    2000 & Catherine Norris & SCR \\
-    2001 & Rachel Pickens & CMC \\
-    2002 & Suzy Nicoletti & CMC \\
-    2002 & Lauren Williams & CMC \\
-    2003 & Cassi Wright & CMC \\
-    2005 & Clare Hudson & CMC \\
-    2005 & Michelle Phillips & CMC \\
-    2006 & Kelci Barnes & CMC \\
-    2006 & Linh Luong & CMC \\
-    2007 & Amy Fuller & CMC \\
-    2007 & Lauren Kristensen & CMC \\
-    2007 & Lisal Smith & CMC \\
-    2008 & Erica Anderson & CMC \\
-    2008 & Monica Emanuel & CMC \\
-    2008 & Alissa Sole & CMC \\
-    2009 & Danielle Peebles & CMC \\
-    2009 & Kendall Snyder & CMC \\
-    2009 & Jordan Stewart & CMC \\
-    2011 & Carliann Brashier & CMC \\
-    2011 & Tessa Dover & CMC \\
-    2011 & Annie Perizzolo & CMC \\
-    2011 & Jenni Rinker & HMC \\
-    2011 & Heidi Wolfgruber & CMC \\
-    2012 & Katie Bilotti & CMC \\
-    2012 & Whitney Dawson & CMC \\
-    2012 & Emma Jones & CMC \\
-    2013 & Carmen Lundell & CMC \\
-    2013 & Emily Ott & CMC \\
-    2014 & Annika Jessen & CMC \\
-    2014 & Michele Kee & CMC \\
-    2014 & Helen Liu & CMC \\
-    2015 & LillyBelle Deer & CMC \\
-    2015 & Louisa Dunwiddie & CMC \\
-    2017 & Stephanie Doi & CMC \\
-    2017 & Carli Lessard & HMC \\
-    2017 & Emily McKinnon & CMC \\
-    2017 & Kelly Ngo & CMC \\
-    2018 & Lizzie Carrade & CMC \\
-    2018 & Lorea Gwo & CMC \\
-    2018 & Maia Presti & SCR \\
-    2020 & Claire Bacon-Brenes & SCR \\
-    2020 & Ivy Chen & HMC \\
-    2020 & Jocelyn Crawford & CMC \\
-    2021 & Mia Syme & CMC \\
-    2022 & Ava Sealander & SCR \\
-    2023 & Ella Blake & HMC \\
-    2023 & Gracey Hiebert & HMC \\
-    2023 & Augusta Lewis & CMC \\
-    2023 & Jameson Mitchum & CMC \\
-    2024 & Emma Ng Pack & CMC \\
+    \end{tabular}}
+\end{table}
+
+
+
+\clearpage
+\begin{longtable}{c p{0.75\textwidth}}
+\caption*{\textbf{\textcolor{teamprimary}{CSCAA Scholar All-American (2002--2024)}}} \\
+\toprule
+\rowcolor{teamprimary!25}
+\textbf{Year} & \textbf{Name} \\
+\midrule
+\endfirsthead
+
+\toprule
+\rowcolor{teamprimary!25}
+\textbf{Year} & \textbf{Name} \\
+\midrule
+\endhead
+
+\bottomrule
+\endfoot
+
+2002 & Suzy Nicoletti \\
+2003 & Meredith King, Cassi Wright \\
+2004 & Meredith King, Lauren Kristensen, Linh Luong, Michelle Phillips, Lisal Smith \\
+2005 & Lauren Kristensen, Lisal Smith \\
+2006 & Amy Fuller, Samantha Kepler, Kevyn Klein, Lauren Kristensen, Linh Luong, Danielle Peebles, Lisal Smith, Jordan Stewart \\
+2007 & Kevyn Klein, Lauren Kristensen, Danielle Peebles, Lisal Smith, Jordan Stewart \\
+2008 & Carliann Brashier, Tessa Dover, Danielle Peebles, Jenni Rinker, Heidi Wolfgruber \\
+2009 & Carliann Brashier, Whitney Dawson, Tessa Dover, Danielle Peebles, Annie Perizzolo, Jenni Rinker, Jordan Stewart, Amy Tresenrider, Heidi Wolfgruber \\
+2010 & Tessa Dover, Annie Perizzolo, Jenni Rinker, Amy Tresenrider, Heidi Wolfgruber \\
+2011 & Katie Bilotti, Carliann Brashier, Tessa Dover, Kristie Howard, Annika Jessen, Helen Liu, Tara McIntyre, Jenni Rinker, Heidi Wolfgruber \\
+2012 & Emma Jones, Helen Liu \\
+2013 & Louisa Dunwiddie, Kristie Howard, Mackenzie Leake, Helen Liu \\
+2014 & LillyBelle Deer, Kayla Flaten, Annika Jessen, Helen Liu, Erin MacLean, Kelly Ngo; Louisa Dunwiddie, Mackenzie Leake \\
+2015 & Courtney Chan, Lauren Rosenberger \\
+2016 & Kelly Ngo (2nd team: Lizzie Carrade, Carli Lessard, Lauren Rosenberger, Emma Stacy) \\
+2017 & Claire Bacon-Brenes, Lizzie Carrade, Stephanie Doi, Kelly Ngo (2nd team: Ivy Chen, Lauren Rosenberger) \\
+2018 & Bryn Edwards, Natalia Orbach-Mandel, Emma Stacy, Janet Tran, Allie Umemoto (2nd team: Lizzie Carrade) \\
+2019 & Bryn Edwards, Riley Hoffman, Augusta Lewis, Natalia Orbach-Mandel, Emma Stacy, Janet Tran, Allie Umemoto \\
+2020 & Christina Campbell, Augusta Lewis, Stephanie Lewis, Jameson Mitchum, Natalia Orbach-Mandel, Ava Sealander, Zuzia Starzyk, Janet Tran, Allie Umemoto (2nd team: Annie Johnson, Mia Syme, Rachel Wander) \\
+2021 & N/A \\
+2022 & Ella Blake, Katelyn Dang, Izzy Doud, Leila El Masri, Lexi Lee, Augusta Lewis, Natalia Orbach-Mandel, Kelly Prawira, Rachel Wander (2nd team: Makenna Parkinson) \\
+2023 & Ella Blake, Sun Young Byun, Izzy Doud, Annie Johnson, Augusta Lewis, Mackenzie Mayfield, Jameson Mitchum, Kelly Prawira (2nd team: Makenna Parkinson, Alexis Romero) \\
+2024 & Sun Young Byun, Mackenzie Mayfield, Katy Shaw, Allyson Yao (2nd team: Milan Manfredi, Alexis Romero, Revere Schmidt, Anna Zeren) \\
 \bottomrule
 \end{longtable}
+    
 
-\begin{longtable}{l l}
-    \caption*{CSCAA Scholar All-American (2002--2024)} \\
-    \toprule
-    Year & Name(s) \\
-    \midrule
-    \endfirsthead
-    
-    \toprule
-    Year & Name(s) \\
-    \midrule
-    \endhead
-    
-    \bottomrule
-    \endfoot
-    
-    2002 & Suzy Nicoletti \\
-    2003 & Meredith King, Cassi Wright \\
-    2004 & Meredith King, Lauren Kristensen, Linh Luong, Michelle Phillips, Lisal Smith \\
-    2005 & Lauren Kristensen, Lisal Smith \\
-    2006 & Amy Fuller, Samantha Kepler, Kevyn Klein, Lauren Kristensen, Linh Luong, Danielle Peebles, Lisal Smith, Jordan Stewart \\
-    2007 & Kevyn Klein, Lauren Kristensen, Danielle Peebles, Lisal Smith, Jordan Stewart \\
-    2008 & Carliann Brashier, Tessa Dover, Danielle Peebles, Jenni Rinker, Heidi Wolfgruber \\
-    2009 & Carliann Brashier, Whitney Dawson, Tessa Dover, Danielle Peebles, Annie Perizzolo, Jenni Rinker, Jordan Stewart, Amy Tresenrider, Heidi Wolfgruber \\
-    2010 & Tessa Dover, Annie Perizzolo, Jenni Rinker, Amy Tresenrider, Heidi Wolfgruber \\
-    2011 & Katie Bilotti, Carliann Brashier, Tessa Dover, Kristie Howard, Annika Jessen, Helen Liu, Tara McIntyre, Jenni Rinker, Heidi Wolfgruber \\
-    2012 & Emma Jones, Helen Liu \\
-    2013 & Louisa Dunwiddie, Kristie Howard, Mackenzie Leake, Helen Liu \\
-    2014 & LillyBelle Deer, Kayla Flaten, Annika Jessen, Helen Liu, Erin MacLean, Kelly Ngo; Louisa Dunwiddie, Mackenzie Leake \\
-    2015 & Courtney Chan, Lauren Rosenberger \\
-    2016 & Kelly Ngo (2nd team: Lizzie Carrade, Carli Lessard, Lauren Rosenberger, Emma Stacy) \\
-    2017 & Claire Bacon-Brenes, Lizzie Carrade, Stephanie Doi, Kelly Ngo (2nd team: Ivy Chen, Lauren Rosenberger) \\
-    2018 & Bryn Edwards, Natalia Orbach-Mandel, Emma Stacy, Janet Tran, Allie Umemoto (2nd team: Lizzie Carrade) \\
-    2019 & Bryn Edwards, Riley Hoffman, Augusta Lewis, Natalia Orbach-Mandel, Emma Stacy, Janet Tran, Allie Umemoto \\
-    2020 & Christina Campbell, Augusta Lewis, Stephanie Lewis, Jameson Mitchum, Natalia Orbach-Mandel, Ava Sealander, Zuzia Starzyk, Janet Tran, Allie Umemoto (2nd team: Annie Johnson, Mia Syme, Rachel Wander) \\
-    2021 & N/A \\
-    2022 & Ella Blake, Katelyn Dang, Izzy Doud, Leila El Masri, Lexi Lee, Augusta Lewis, Natalia Orbach-Mandel, Kelly Prawira, Rachel Wander (2nd team: Makenna Parkinson) \\
-    2023 & Ella Blake, Sun Young Byun, Izzy Doud, Annie Johnson, Augusta Lewis, Mackenzie Mayfield, Jameson Mitchum, Kelly Prawira (2nd team: Makenna Parkinson, Alexis Romero) \\
-    2024 & Sun Young Byun, Mackenzie Mayfield, Katy Shaw, Allyson Yao (2nd team: Milan Manfredi, Alexis Romero, Revere Schmidt, Anna Zeren) \\
-    
-    \end{longtable}
-    
-    % Fulbright
-\begin{table}[htbp]
-    \centering
-    \caption*{Fulbright Award Recipients}
-    \begin{tabular}{ll}
-    \toprule
-    Year & Name \\
-    \midrule
-    2005 & Cassi Wright '03 \\
-    2006 & Alli Lathrope \\
-    \bottomrule
-    \end{tabular}
-    \end{table}
-    
-    % CMS-SCIAC Student-Athlete Award
-    \begin{table}[htbp]
-    \centering
-    \caption*{CMS-SCIAC Student-Athlete Award Recipients}
-    \begin{tabular}{ll}
-    \toprule
-    Year & Name \\
-    \midrule
-    2007 & Amy Jarvis \\
-    2011 & Tessa Dover \\
-    2013 & Kristie Howard \\
-    2014 & Dana Shaker \\
-    \bottomrule
-    \end{tabular}
-    \end{table}
-    
-    % NCAA Elite 88 Award
-    \begin{table}[htbp]
-    \centering
-    \caption*{NCAA Elite 88 Award Recipients}
-    \begin{tabular}{ll}
-    \toprule
-    Year & Name \\
-    \midrule
-    2010 & Tessa Dover \\
-    2011 & Tessa Dover \\
-    \bottomrule
-    \end{tabular}
-    \end{table}
     

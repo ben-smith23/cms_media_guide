@@ -1,5 +1,8 @@
 % chktex-file 44
 
+% Required packages for table coloring
+\usepackage{colortbl}
+
 % Event Profile Table Macro
 \newcommand{\eventprofiletable}[2]{
 \begin{table}[H]
@@ -127,4 +130,45 @@
 #2
 \hline
 \end{tabular}
+}
+
+% Awards Table Macro
+\newcommand{\awardstable}[3]{
+\begin{longtable}{#1}
+\caption*{\textbf{\textcolor{teamprimary}{#2}}} \\
+\toprule
+\rowcolor{teamprimary!25}
+#3 \\
+\midrule
+\endfirsthead
+
+\toprule
+\rowcolor{teamprimary!25}
+#3 \\
+\midrule
+\endhead
+
+\bottomrule
+\endfoot
+}
+
+% Single Awards Table Macro
+\newcommand{\awardstablesingle}[3]{
+\begin{table}[htbp]
+\centering
+\caption*{\textbf{\textcolor{teamprimary}{#1}}}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{#2}
+\toprule
+\rowcolor{teamprimary!25}
+#3 \\
+\midrule
+}
+
+% Close single awards table
+\newcommand{\awardstablesingleclose}{
+\bottomrule
+\end{tabular}%
+}
+\end{table}
 }
