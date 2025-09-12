@@ -172,3 +172,108 @@
 }
 \end{table}
 }
+
+% Team Record Table Macro (for minipages)
+\newcommand{\teamrecordtable}[2]{
+\centering
+\caption*{\textbf{\textcolor{teamprimary}{#1}}}
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}p{1.8cm}p{2.8cm}p{1.2cm}@{}}
+\toprule
+\rowcolor{teamprimary!25}
+    \textbf{Time} & \textbf{Name} & \textbf{Year} \\
+\midrule
+#2
+\bottomrule
+\end{tabular}%
+}
+}
+
+% Team Record Table Macro (for minipages)
+\newcommand{\teamdivetable}[2]{
+\centering
+\caption*{\textbf{\textcolor{teamprimary}{#1}}}
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}p{1.8cm}p{2.8cm}p{1.2cm}@{}}
+\toprule
+\rowcolor{teamprimary!25}
+    \textbf{Score} & \textbf{Name} & \textbf{Year} \\
+\midrule
+#2
+\bottomrule
+\end{tabular}%
+}
+}
+
+% Team Record Table with Team column (for minipages)
+\newcommand{\teamrecordtablewithteam}[2]{
+\centering
+\caption*{\textbf{\textcolor{teamprimary}{#1}}}
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{@{}p{1.8cm}p{2.8cm}p{1.2cm}p{1.4cm}@{}}
+\toprule
+\rowcolor{teamprimary!25}
+    \textbf{Time} & \textbf{Name} & \textbf{Year} & \textbf{Team} \\
+\midrule
+#2
+\bottomrule
+\end{tabular}%
+}
+}
+
+% Team Record Table with Site column (for minipages)
+\newcommand{\teamrecordtablewithsite}[2]{
+\centering
+\caption*{\textbf{\textcolor{teamprimary}{#1}}}
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{2}
+\begin{tabular}{@{}p{1.8cm}p{5.5cm}p{1.2cm}p{1.4cm}@{}}
+\toprule
+\rowcolor{teamprimary!25}
+    \textbf{Time} & \textbf{Name} & \textbf{Year} & \textbf{Site} \\
+\midrule
+#2
+\bottomrule
+\end{tabular}%
+}
+}
+
+% Team Record Table with full context (for minipages)
+\newcommand{\teamrecordtablefull}[2]{
+\centering
+\caption*{\textbf{\textcolor{teamprimary}{#1}}}
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{@{}p{1.8cm}p{2.8cm}p{1.2cm}p{1.4cm}p{1.4cm}p{2.0cm}@{}}
+\toprule
+\rowcolor{teamprimary!25}
+    \textbf{Time} & \textbf{Name} & \textbf{Year} & \textbf{Site} & \textbf{Meet} & \textbf{Context} \\
+\midrule
+#2
+\bottomrule
+\end{tabular}%
+}
+}
+
+% Team Record Development Table (for detailed records with context)
+\newcommand{\teamrecorddevtable}[2]{%
+\begin{table}[H]
+\centering
+\caption*{\textbf{\textcolor{teamprimary}{#1}}}
+\scriptsize
+\resizebox{\textwidth}{!}{%
+\renewcommand{\arraystretch}{1}%
+\begin{tabular}{@{}p{1.2cm}p{2.2cm}p{1.0cm}p{1.2cm}p{1.2cm}p{2.5cm}@{}}
+\toprule
+\rowcolor{teamprimary!25}
+\textbf{Time} & \textbf{Name} & \textbf{Date} & \textbf{Site} & \textbf{Meet} & \textbf{Context} \\
+\midrule
+#2
+\bottomrule
+\end{tabular}%
+} % end resizebox
+\end{table}%
+} % end macro
