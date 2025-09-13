@@ -277,3 +277,51 @@
 } % end resizebox
 \end{table}%
 } % end macro
+
+% Professional full-page section start with team primary background
+\newcommand{\fullpagesection}[2]{%
+    \clearpage
+    \thispagestyle{empty}
+    
+    % Increment section counter first
+    \stepcounter{section}
+    \sectionmark{#2}
+    
+    % Full page background in team primary
+    \begin{tikzpicture}[overlay, remember picture]
+        \fill[teamprimary] (current page.north west) rectangle (current page.south east);
+    \end{tikzpicture}
+    
+    \vspace*{0.05\textheight}
+    
+    \begin{center}
+        % Image with easy positioning
+        \ifx\relax#1\relax
+            % No image provided - skip this section
+        \else
+            \begin{tikzpicture}
+                % Easy coordinates: (left-right, up-down)
+                % (0,0) = bottom left, (16,10) = top right
+                \node[anchor=center] at (10, 5) {#1};
+            \end{tikzpicture}
+            \vspace{2cm}
+        \fi
+
+        % Section title with custom styling and section number
+        \begin{minipage}{0.9\textwidth}
+            \centering
+            {\fontsize{32pt}{40pt}\selectfont 
+             \fontfamily{phv}\selectfont
+             \textcolor{teamsecondary}{\bfseries \thesection\ #2}}
+        \end{minipage}
+        
+    \end{center}
+    
+    \vspace*{\fill}
+    \clearpage
+    
+    % Add to table of contents
+    \addcontentsline{toc}{section}{\thesection\ #2}
+}
+
+

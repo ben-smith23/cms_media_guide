@@ -48,11 +48,24 @@
   right=3cm,
   headsep=0.75cm
 }
+% Section formatting for full-page layouts
 \newcommand{\sectionbreak}{\clearpage}
 \newcommand{\subsectionbreak}{\clearpage}
 
-\titlespacing*{\section}{0pt}{*2}{*1}
+% Custom section formatting for full-page sections
+\titleformat{\section}
+  {\normalfont\fontsize{44pt}{52pt}\selectfont\fontfamily{phv}\selectfont\bfseries\color{teamsecondary}}
+  {\thesection}{1em}{}
+  [\clearpage]
+
+% Spacing for sections and subsections
+\titlespacing*{\section}{0pt}{0pt}{0pt}
 \titlespacing*{\subsection}{0pt}{*1.5}{*1}
+
+% Custom TOC formatting
+\usepackage{tocloft}
+\renewcommand{\cfttoctitlefont}{\fontsize{24pt}{30pt}\selectfont\color{black}}
+\renewcommand{\cftaftertoctitle}{\vspace{1cm}}
 
 
 % =============================
