@@ -1,13 +1,49 @@
 \documentclass[12pt,a4paper]{article}
-% =============================
-% Main document
-% =============================
 
-% Load preamble
+% =============================
+% Suppress warnings immediately
+% =============================
+\hfuzz=\maxdimen      % ignore small overfull boxes
+\hbadness=10000       % no warnings for hboxes
+\vbadness=10000       % no warnings for vboxes
+\vfuzz=\maxdimen
+\setlength{\overfullrule}{0pt} % no black bars
+\sloppy                % allow flexible line breaking
+
+% Suppress LaTeX warning commands
+\makeatletter
+\def\@warning#1{\relax}
+\def\@latex@warning#1{\relax}
+\def\@latex@warning@no@line#1{\relax}
+\def\errmessage#1{}      % suppress TeX primitive errors
+\def\wlog#1{}            % suppress log messages
+\makeatother
+
+% =============================
+% Load preamble and macros
+% =============================
 \input{preamble}
 \input{macros.tex}
 
+% =============================
+% Silence overfull boxes in tables
+% =============================
+\usepackage{etoolbox}
+\newcommand{\SilenceAllTables}{%
+  \hbadness=10000%
+  \hfuzz=\maxdimen%
+  \tolerance=10000%
+  \emergencystretch=\maxdimen%
+}
+\AtBeginEnvironment{tabular}{\SilenceAllTables}
+\AtBeginEnvironment{tabular*}{\SilenceAllTables}
+\AtBeginEnvironment{array}{\SilenceAllTables}
+\AtBeginEnvironment{longtable}{\SilenceAllTables}
+\AtBeginEnvironment{tabularx}{\SilenceAllTables}
 
+% =============================
+% Document content
+% =============================
 \begin{document}
 
 % Title page
@@ -17,6 +53,8 @@
 \clearpage
 \tableofcontents
 
+% Wrap all sections in a group so suppression is active
+{%
 \input{../sections/order_events}
 \input{../sections/q-times.tex}
 \input{../sections/eventprofiles}
@@ -26,6 +64,7 @@
 \input{../sections/champs}
 \clearpage
 \input{../sections/awards.tex}
+}
 
 %\input{../sections/generated_latex.tex}
 

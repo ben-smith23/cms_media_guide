@@ -1125,7 +1125,7 @@
 \begin{tabular}{@{}p{3cm}p{1.8cm}p{3cm}p{2cm}p{1.5cm}@{}}
 \toprule
 \rowcolor{teamprimary!25}
-\textbf{Event} & \textbf{Time} & \textbf{Name} & \textbf{Date} & \textbf{Team} \\
+\textbf{Event} & \textbf{Time/Score} & \textbf{Name} & \textbf{Date} & \textbf{Team} \\
 \midrule
 50 Free & 23.22 & Marie Marsman & 12.3.04 & Carleton \\
 100 Free & 50.55 & Marie Marsman & 12.4.04 & Carleton \\
@@ -1206,7 +1206,7 @@
     \begin{tabular}{@{}p{2.2cm}p{1.2cm}p{2.5cm}p{0.8cm}@{}}
     \toprule
     \rowcolor{teamprimary!25}
-    \textbf{Event} & \textbf{Time} & \textbf{Name} & \textbf{Year} \\
+    \textbf{Event} & \textbf{Time/Score} & \textbf{Name} & \textbf{Year} \\
     \midrule
     50 Free & 23.34 & Jocelyn Crawford & 2017 \\
     100 Free & 51.24 & Jocelyn Crawford & 2017 \\
@@ -1476,7 +1476,24 @@
 }
 
 % 200 Free Relay Records
-\teamrecorddevtable{200 Free Relay}{
+\scriptsize
+\begin{longtable}{@{}p{1.5cm}p{3.0cm}p{1.2cm}p{1.5cm}p{1.5cm}p{3.0cm}@{}}
+\caption*{\textbf{\textcolor{teamprimary}{200 Free Relay}}} \\
+\toprule
+\rowcolor{teamprimary!25}
+\textbf{Time} & \textbf{Name} & \textbf{Date} & \textbf{Site} & \textbf{Meet} & \textbf{Context} \\
+\midrule
+\endfirsthead
+
+\toprule
+\rowcolor{teamprimary!25}
+\textbf{Time} & \textbf{Name} & \textbf{Date} & \textbf{Site} & \textbf{Meet} & \textbf{Context} \\
+\midrule
+\endhead
+
+\bottomrule
+\endfoot
+
 1:34.91* & Liu (23.82), Rinker (23.68), Howard (24.03), Kee (23.38) & 2/20/2011 & Long Beach & SCIACs & 200 Free Relay Final \\
 1:33.87 & Crawford (23.40), Stacy (23.96), Hoffman (23.58), Orbach-Mandel (22.93) & 3/22/2018 & IUPUI & NCAAs & 200 Free Relay Consolation Final \\
 1:33.94* & Kee (23.88), Ngo (23.31), Chan (23.76), Liu (22.99) & 2/23/2014 & Commerce & SCIACs & 200 Free Relay Time-Trial \\
@@ -1490,7 +1507,7 @@
 1:37.59* & Phillips (24.97), Kristensen (24.31), Luong (24.34), Smith (24.07) & 2/19/2004 & Cerritos & SCIACs & 200 Free Relay Final \\
 1:38.24* & Wright (24.86), Luong (24.58), Winters (24.66), Hudson (24.14) & 2/20/2003 & Cerritos & SCIACs & 200 Free Relay Final \\
 1:36.22* & Rinker (24.18), Stewart (24.02), Bilotti (23.93), Jones (24.09) & 3/19/2009 & Minneapolis & NCAAs & 200 Free Relay Consolation Final \\
-}
+\end{longtable}
 
 % 400 Free Relay Records
 \teamrecorddevtable{400 Free Relay}{
@@ -1504,15 +1521,7 @@
 }
 
 % Table Group 12: 800 Free Relay
-\begin{table}[H]
-\centering
-\begin{minipage}[t]{0.6\textwidth}
-\centering
-\textbf{800 Free Relay}\\[0.1cm]
-\begin{tabular}{@{}p{1.8cm}p{2.8cm}p{1.2cm}p{1.4cm}p{1.4cm}p{2.0cm}@{}}
-\hline
-    \textbf{Time} & \textbf{Name} & \textbf{Year} & \textbf{Site} & \textbf{Meet} & \textbf{Context} \\
-\hline
+\teamrecorddevtable{800 Free Relay}{
     7:33.68 & Mitchum (1:54.13), Blake (1:54.89), Lewis (1:53.02), Campbell (1:51.64) & 2/20/2020 & Commerce & SCIACs & 800 Free Relay \\
     7:29.28* & Byun (1:53.82), Shaw (1:51.41), Lewis (1:51.39, Blake (1:52.66) & 2/15/2023 & ELAC & SCIACs & 800 Free Relay \\
     7:31.11* & Lewis (1:52.67), Hiebert (1:53.98), El Masri (1:53.48), Blake (1:50.98) & 2/16/2022 & La Mirada & SCIACs & 800 Free Relay \\
@@ -1524,21 +1533,10 @@
     7:48.10 & Kristensen (1:57.17), Heine (1:56.57), Peebles (1:58.05), Stewart (1:56.31) & 2/18/2006 & Cerritos & SCIACs & 800 Free Relay \\
     7:36.40* & Tran (1:55.01), Syme (1:53.76), Hoffman (1:51.56), Carrade (1:56.07) & 2/21/2018 & Commerce & SCIACs & 800 Free Relay \\
     7:53.43 & Barnes (1:58.81), Luong (1:58.65), Holth (1:59.60), Fuller (1:56.37) & 2/20/2004 & Cerritos & SCIACs & 800 Free Relay \\
-\hline
-\end{tabular}
-\end{minipage}
-\end{table}
+}
 
 % Table Group 13: 200 Medley Relay
-\begin{table}[H]
-\centering
-\begin{minipage}[t]{0.6\textwidth}
-\centering
-\textbf{200 Medley Relay}\\[0.1cm]
-\begin{tabular}{@{}p{1.8cm}p{2.8cm}p{1.2cm}p{1.4cm}p{1.4cm}p{2.0cm}@{}}
-\hline
-    \textbf{Time} & \textbf{Name} & \textbf{Year} & \textbf{Site} & \textbf{Meet} & \textbf{Context} \\
-\hline
+\teamrecorddevtable{200 Medley Relay}{
     1:42.21 & Sharma (25.98), Manfredi (28.84), Mayfield (24.34), Kan (23.05) & 2/19/2025 & ELAC & SCIACs & 200 Medley Relay Final \\
     1:42.91 & Sharma (26.20), Mayfield (28.70), Byun (24.73), Chang (23.28) & 2/22/2024 & ELAC & SCIACs & 200 Medley Relay Final \\
     1:43.60* & Cheng (26.75), Perizzolo (28.35), Bilotti (24.78), Rinker (23.72) & 2/22/2010 & Long Beach & SCIACs & 200 Medley Relay Final \\
@@ -1551,21 +1549,10 @@
     1:48.97* & Smith (27.86), Phillips (31.00), Luong (25.78), Kristensen (24.33) & 3/12/2004 & St. Peter's, MO & NCAAs & 200 Medley Relay Final \\
     1:49.14* & Smith (27.83), Kristensen (30.87), Luong (26.03), Phillips (24.41) & 2/21/2004 & Cerritos & SCIACs & 200 Medley Relay Final \\
     1:45.54* & Rinker (27.62), Perizzolo (29.40), Bilotti (24.44), Jones (24.08) & 3/18/2009 & Minneapolis & NCAAs & 200 Medley Relay Prelim \\
-\hline
-\end{tabular}
-\end{minipage}
-\end{table}
+}
 
 % Table Group 14: 400 Medley Relay
-\begin{table}[H]
-\centering
-\begin{minipage}[t]{0.6\textwidth}
-\centering
-\textbf{400 Medley Relay}\\[0.1cm]
-\begin{tabular}{@{}p{1.8cm}p{2.8cm}p{1.2cm}p{1.4cm}p{1.4cm}p{2.0cm}@{}}
-\hline
-    \textbf{Time} & \textbf{Name} & \textbf{Year} & \textbf{Site} & \textbf{Meet} & \textbf{Context} \\
-\hline
+\teamrecorddevtable{400 Medley Relay}{
     3:59.58* & Smith (59.57), Phillips (1:07.96), Fuller (58.43), Kristensen (53.62) & 3/11/2004 & St. Peter's, MO & NCAAs & 400 Medley Relay Final \\
     3:57.76 & Heine (1:00.37), Smith (1:06.51), Fuller (58.69), Kristensen (52.19) & 3/9/2006 & Minneapolis & NCAAs & 400 Medley Relay Final \\
     3:57.06* & Rinker (59.15), Perizzolo (1:04.05), Klein (59.98), Brazelton (53.88) & 2/23/2008 & Cerritos & SCIACs & 400 Medley Relay Final \\
@@ -1574,10 +1561,7 @@
     3:47.73* & Rinker (57.56), Perizzolo (1:02.25), Bilotti (54.91), Jones (53.01) & 3/19/2009 & Minneapolis & NCAAs & 400 Medley Relay Prelim \\
     3:46.24* & Rinker (57.65), Perizzolo (1:01.40), Bilotti (55.08), Jones (52.11) & 2/21/2010 & Long Beach & SCIACs & 400 Medley Relay Final \\
     3:44.60* & Dover (57.25), Perizzolo (1:01.10), Bilotti (54.98), Jones (51.27) & 3/18/2010 & Minneapolis & NCAAs & 400 Medley Relay Final \\
-\hline
-\end{tabular}
-\end{minipage}
-\end{table}
+}
 
 % ===== END Development of Team Records (October 2001 to March 2025) - Athena =====
 
@@ -1783,15 +1767,7 @@
 
 
 % Table Group 10: 200 Free Relay
-\begin{table}[H]
-\centering
-\begin{minipage}[t]{0.6\textwidth}
-\centering
-\textbf{200 Free Relay}\\[0.1cm]
-\begin{tabular}{@{}p{1.8cm}p{2.8cm}p{1.2cm}p{1.4cm}p{1.4cm}p{2.0cm}@{}}
-\hline
-    \textbf{Time} & \textbf{Name} & \textbf{Year} & \textbf{Site} & \textbf{Meet} & \textbf{Context} \\
-\hline
+\teamrecorddevtable{200 Free Relay}{
     1:22.23 & Poltash (20.87), Bowers (20.51), Shultz (20.58), Hinton (20.27) & 2/17/2013 & La Mirada & SCIACs & 200 Free Relay \\
     1:21.78 & Poltash (20.65), Bowers (20.54), Shultz (20.46), Hinton (20.13) & 3/21/2013 & Shenandoah, TX & NCAAs & 200 Free Relay \\
     1:21.42 & Poltash (20.38), Bowers (20.68), Shultz (20.25), Hinton (20.11) & 3/21/2013 & Shenandoah, TX & NCAAs & 200 Free Relay \\
@@ -1799,40 +1775,18 @@
     1:21.16* & Poltash (20.23), Williams (20.45), Shultz (20.31), Hinton (20.17) & 3/19/2015 & Shenandoah, TX & NCAAs & 200 Free Relay Final \\
     1:21.03* & Tekieli (20.20), Krueger (20.67), Johnson (20.53), Conati (19.63) & 3/17/2022 & IUPUI & NCAAs & 200 Free Relay Prelim \\
     1:20.53* & Tekieli (20.07), Krueger (20.46), Johnson (20.24), Conati (19.76) & 3/17/2022 & IUPUI & NCAAs & 200 Free Relay Final \\
-\hline
-\end{tabular}
-\end{minipage}
-\end{table}
+}
 
 % Table Group 11: 400 Free Relay
-\begin{table}[H]
-\centering
-\begin{minipage}[t]{0.6\textwidth}
-\centering
-\textbf{400 Free Relay}\\[0.1cm]
-\begin{tabular}{@{}p{1.8cm}p{2.8cm}p{1.2cm}p{1.4cm}p{1.4cm}p{2.0cm}@{}}
-\hline
-    \textbf{Time} & \textbf{Name} & \textbf{Year} & \textbf{Site} & \textbf{Meet} & \textbf{Context} \\
-\hline
+\teamrecorddevtable{400 Free Relay}{
     3:01.27 & Poltash (45.59), Bowers (45.29), Weber (45.50, Hinton (44.89) & 2/19/2013 & La Mirada & SCIACs & 400 Free Relay \\
     2:59.60* & Poltash (45.05), Bowers (44.81), Shultz (45.00), Hinton (44.74) & 3/23/2013 & Shenandoah, TX & NCAAs & 400 Free Relay Prelim \\
     2:59.33 & Breazeale (45.56), Conati (44.42), Workman (45.38), Tekieli (43.97) & 3/19/2022 & IUPUI & NCAAs & 400 Free Relay Prelim \\
     2:58.88* & Breazeale (45.24), Conati (44.06), Workman (45.69), Tekieli (43.89) & 3/19/2022 & IUPUI & NCAAs & 400 Free Rely Final \\
-\hline
-\end{tabular}
-\end{minipage}
-\end{table}
+}
 
 % Table Group 12: 800 Free Relay
-\begin{table}[H]
-\centering
-\begin{minipage}[t]{0.6\textwidth}
-\centering
-\textbf{800 Free Relay}\\[0.1cm]
-\begin{tabular}{@{}p{1.8cm}p{2.8cm}p{1.2cm}p{1.4cm}p{1.4cm}p{2.0cm}@{}}
-\hline
-    \textbf{Time} & \textbf{Name} & \textbf{Year} & \textbf{Site} & \textbf{Meet} & \textbf{Context} \\
-\hline
+\teamrecorddevtable{800 Free Relay}{
     6:36.85 & A Breazeale (1:37.29), T Breazeale (1:41.54), Merodio (1:38.41), Lang (1:39.61) & 3/22/2024 & ELAC & SCIACs & 800 Free Relay \\
     6:40.17 & Williams (1:38.78), Culberson (1:39.66), Spurzem (1:40.85), Crewe (1:40.88) & 3/17/2017 & Shenandoah, TX & NCAAs & 800 Free Relay \\
     6:41.15 & Poltash (1:39.07), Spurzem (1:42.81), Whiting (1:38.55), Blumberg (1:40.72) & 3/20/2015 & Shenandoah, TX & NCAAs & 800 Free Relay \\
@@ -1840,21 +1794,10 @@
     6:43.53 & Weber (1:40.64), Bowers (1:41.45), Blumberg (1:41.29), Whiting (1:40.05) & 2/18/2013 & La Mirada & SCIACs & 800 Free Relay \\
     6:46.94 & Weber (1:41.80), Ostreim (1:41.81), McNerney (1:41.30), Bowers (1:42.03) & 3/25/2011 & Knoxville & NCAAs & 800 Free Relay \\
     6:48.54 & Weber (1:40.80), McNerney (1:43.41), Cosentino (1:43.07), Andron (1:41.26) & 2/22/2010 & Long Beach & SCIACs & 800 Free Relay \\
-\hline
-\end{tabular}
-\end{minipage}
-\end{table}
+}
 
 % Table Group 13: 200 Medley Relay
-\begin{table}[H]
-\centering
-\begin{minipage}[t]{0.6\textwidth}
-\centering
-\textbf{200 Medley Relay}\\[0.1cm]
-\begin{tabular}{@{}p{1.8cm}p{2.8cm}p{1.2cm}p{1.4cm}p{1.4cm}p{2.0cm}@{}}
-\hline
-    \textbf{Time} & \textbf{Name} & \textbf{Year} & \textbf{Site} & \textbf{Meet} & \textbf{Context} \\
-\hline
+\teamrecorddevtable{200 Medley Relay}{
     1:27.38* & Breazeale (22.50), Limm (24.81), Conati (20.60), Tekieli (19.47) & 3/16/2022 & IUPUI & NCAAs & 200 Medley Relay Final \\
     1:28.16* & Breazeale (22.82), Limm (24.81), Conati (20.95), Tekieli (19.58) & 3/16/2022 & IUPUI & NCAAs & 200 Medley Relay Prelim \\
     1:32.73* & Hallett (23.94), Pai (26.01), Lieberman (22.28), Fitzgerald (20.50) & 2/21/2011 & Long Beach & SCIACs & 200 Medley Relay \\
@@ -1866,21 +1809,10 @@
     1:29.59* & Williams (22.62), Alleva (25.24), Shultz (21.61), Hinton (20.12) & 3/18/2015 & Shenandoah, TX & NCAAs & 200 Medley Relay Final \\
     1:28.91* & Breazeale (22.56), Willett (24.73), Conati (21.40), Roeseler (20.22) & 2/20/2020 & Commerce & SCIACs & 200 Medley Relay \\
     1:28.57* & Breazeale (22.75), Limm (24.96), Conati (21.17), Tekieli (19.69) & 2/16/2022 & La Mirada & SCIACs & 200 Medley Rely \\
-\hline
-\end{tabular}
-\end{minipage}
-\end{table}
+}
 
 % Table Group 14: 400 Medley Relay
-\begin{table}[H]
-\centering
-\begin{minipage}[t]{0.6\textwidth}
-\centering
-\textbf{400 Medley Relay}\\[0.1cm]
-\begin{tabular}{@{}p{1.8cm}p{2.8cm}p{1.2cm}p{1.4cm}p{1.4cm}p{2.0cm}@{}}
-\hline
-    \textbf{Time} & \textbf{Name} & \textbf{Year} & \textbf{Site} & \textbf{Meet} & \textbf{Context} \\
-\hline
+\teamrecorddevtable{400 Medley Relay}{
     3:15.05* & Tekieli (48.68), Limm (54.42), Applebaum (47.61), Conati (44.24) & 2/18/2022 & La Mirada & SCIACs & 400 Medley Relay \\
     3:12.34* & Tekieli (47.19), Limm (54.40), Applebaum (47.01), Conati (43.74) & 3/17/2022 & IUPUI & NCAAs & 400 Medley Relay Final \\
     3:16.74* & Williams (48.88), Alleva (55.47), Shultz (48.57), Poltash (43.82) & 3/19/2015 & Shenandoah, TX & NCAAs & 400 Medley Relay Final \\
@@ -1892,10 +1824,7 @@
     3:22.81* & Weber (51.01), Pai (56.72), Lieberman (49.11), Bowers (45.97) & 3/24/2011 & Knoxville, TN & NCAAs & 400 Medley Relay Prelim \\
     3:17.79 & Williams (48.46), Alleva (56.96), Shultz (48.59), Poltash (43.78) & 3/20/2014 & IUPUI & NCAAs & 400 Medley Relay Prelim \\
     3:23.68* & Weber (51.77), Pai (56.95), Lieberman (49.02), Bowers (45.94) & 2/20/2011 & Long Beach & SCIACs & 400 Medley Relay \\
-\hline
-\end{tabular}
-\end{minipage}
-\end{table}
+}
 
 % ===== END Development of Team Records (October 2001 to March 2025) - Stag =====
 
