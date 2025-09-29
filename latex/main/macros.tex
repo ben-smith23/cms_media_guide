@@ -25,6 +25,8 @@
 
 % Awards Table Macro
 \newcommand{\awardstable}[3]{
+    \renewcommand{\arraystretch}{1.25}
+\small
 \begin{longtable}{#1}
 \caption*{\textbf{\textcolor{teamprimary}{#2}}} \\
 \toprule
@@ -168,6 +170,35 @@
 } % end resizebox
 \end{table}%
 } % end macro
+
+% Side-by-side Event Tables Macro
+\newcommand{\eventtables}[4]{
+\begin{table}[H]
+\centering
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\textbf{#1}\\[0.1cm]
+\begin{tabular}{@{}p{2.8cm}p{1.2cm}@{}}
+\hline
+    \textbf{NAME} & \textbf{YEAR} \\
+\hline
+#2
+\hline
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\textbf{#3}\\[0.1cm]
+\begin{tabular}{@{}p{2.8cm}p{1.2cm}@{}}
+\hline
+    \textbf{NAME} & \textbf{YEAR} \\
+\hline
+#4
+\hline
+\end{tabular}
+\end{minipage}
+\end{table}
+}
 
 % Professional full-page section start with team primary background
 \newcommand{\fullpagesection}[2]{%
