@@ -111,7 +111,7 @@ def sort_events_by_order(events):
     
     return sorted(events, key=event_sort_key)
 
-def generate_direct_latex_table(event_name, event_data):
+def generate_direct_latex_table(event_name, event_data, is_wide_sheet=False, sheet_name=""):
     """Generate direct LaTeX table content (just the tabular, no wrapper)"""
     
     # Sort data appropriately
@@ -123,9 +123,29 @@ def generate_direct_latex_table(event_name, event_data):
     # Get available columns
     available_columns = detect_available_columns(event_data_sorted)
     
+    # Check if this is a full relay event
+    is_full_relay = "relay" in event_name.lower() and "spl" not in event_name.lower()
+    
     # Define column headers based on available columns
     headers = []
     column_spec = "@{}"
+    
+    # Check if this is a sheet that needs narrower columns
+    is_narrow_sheet = "development of team records" in sheet_name.lower() if sheet_name else False
+    
+    # Determine column width tier
+    if is_narrow_sheet:
+        # Narrower for development of team records
+        width_tier = "narrow"
+    elif is_full_relay:
+        # All relay tables get extra wide columns
+        width_tier = "extra_wide"
+    elif is_wide_sheet:
+        # Wide for full-width sheets
+        width_tier = "wide"
+    else:
+        # Normal for side-by-side tables
+        width_tier = "normal"
     
     if 'TIME' in available_columns:
         # Check if this is a diving event (contains "meter" or "Meter")
@@ -133,31 +153,38 @@ def generate_direct_latex_table(event_name, event_data):
             headers.append("\\textbf{Score}")
         else:
             headers.append("\\textbf{Time}")
-        column_spec += "p{1.2cm}"
+        widths = {"extra_wide": "p{4.5cm}", "wide": "p{2.5cm}", "narrow": "p{2.0cm}", "normal": "p{1.8cm}"}
+        column_spec += widths[width_tier]
     
     if 'NAME' in available_columns:
         headers.append("\\textbf{Name}")
-        column_spec += "p{1.8cm}"
+        widths = {"extra_wide": "p{8.5cm}", "wide": "p{4.5cm}", "narrow": "p{3.5cm}", "normal": "p{3.0cm}"}
+        column_spec += widths[width_tier]
     
     if 'YEAR' in available_columns:
         headers.append("\\textbf{Year}")
-        column_spec += "p{0.6cm}"
+        widths = {"extra_wide": "p{2.5cm}", "wide": "p{1.5cm}", "narrow": "p{1.2cm}", "normal": "p{1.0cm}"}
+        column_spec += widths[width_tier]
     
     if 'SITE' in available_columns:
         headers.append("\\textbf{Site}")
-        column_spec += "p{0.8cm}"
+        widths = {"extra_wide": "p{4.5cm}", "wide": "p{2.5cm}", "narrow": "p{2.0cm}", "normal": "p{1.5cm}"}
+        column_spec += widths[width_tier]
     
     if 'TEAM' in available_columns:
         headers.append("\\textbf{Team}")
-        column_spec += "p{0.8cm}"
+        widths = {"extra_wide": "p{4.5cm}", "wide": "p{2.5cm}", "narrow": "p{2.0cm}", "normal": "p{1.5cm}"}
+        column_spec += widths[width_tier]
     
     if 'MEET' in available_columns:
         headers.append("\\textbf{Meet}")
-        column_spec += "p{0.8cm}"
+        widths = {"extra_wide": "p{4.5cm}", "wide": "p{2.5cm}", "narrow": "p{2.0cm}", "normal": "p{1.5cm}"}
+        column_spec += widths[width_tier]
     
     if 'CONTEXT' in available_columns:
         headers.append("\\textbf{Context}")
-        column_spec += "p{1.2cm}"
+        widths = {"extra_wide": "p{5.0cm}", "wide": "p{3.0cm}", "narrow": "p{2.5cm}", "normal": "p{2.0cm}"}
+        column_spec += widths[width_tier]
     
     column_spec += "@{}"
     
@@ -191,20 +218,18 @@ def generate_direct_latex_table(event_name, event_data):
     else:
         table_content = table_rows[0] + " \\\\"
     
-    # Return just the table content
+    # Return table content without resizebox
     latex_table = f"""\\centering
-\\tiny
-\\renewcommand{{\\arraystretch}}{{0.75}}
-\\setlength{{\\tabcolsep}}{{2pt}}
-\\resizebox{{\\textwidth}}{{!}}{{
+\\small
+\\renewcommand{{\\arraystretch}}{{1.0}}
+\\setlength{{\\tabcolsep}}{{4pt}}
 \\begin{{tabular}}{{{column_spec}}}
 \\toprule
 {(' & '.join(headers))} \\\\
 \\midrule
 {table_content}
 \\bottomrule
-\\end{{tabular}}%
-}}"""
+\\end{{tabular}}"""
     
     return latex_table
 
@@ -247,45 +272,97 @@ def generate_complete_latex(df):
         # Add subsection for sex
         latex_content.append("\\clearpage")
         latex_content.append(f"\\subsection{{{sex_name}}}")
-        latex_content.append("\\vspace{-0.3em}")
         
         # Group by event and generate tables
         events = sort_events_by_order(section_data['EVENT'].unique())
         
-        # Collect all events as (name, content) tuples
-        all_events = []
+        # Check if this sheet should use full-width tables only
+        full_width_sheets = [
+            'CMS at PP combined',
+            'development of team records',
+            'NCAA top 20',
+            'SCIAC All Time Top 10 Performers',
+            'SCIAC records',
+            'CMS Axelrood Pool Records',
+            'CMS SCIAC Champions'
+        ]
+        use_full_width = any(sheet.lower() in sheet_name.lower() for sheet in full_width_sheets)
+        
+        # Separate full relays from other events
+        relay_events = []
+        minipage_events = []
+        
         for event in events:
+            # Check if this is a full relay (not a relay split)
+            is_full_relay = "relay" in event.lower() and "spl" not in event.lower()
+            if is_full_relay:
+                relay_events.append(event)
+            else:
+                minipage_events.append(event)
+        
+        # Collect minipage events as (name, content) tuples
+        all_events = []
+        for event in minipage_events:
             event_data = section_data[section_data['EVENT'] == event]
-            event_latex = generate_direct_latex_table(event, event_data)
+            event_latex = generate_direct_latex_table(event, event_data, is_wide_sheet=use_full_width, sheet_name=sheet_name)
             all_events.append((event, event_latex))
         
-        # Output events in pairs (side by side)
-        for i in range(0, len(all_events), 2):
-            latex_content.append("\\vspace{0.8em}")
-            
-            if i + 1 < len(all_events):
-                # Two events side by side
-                latex_content.append("\\noindent\\begin{minipage}[t]{0.48\\textwidth}")
-                latex_content.append("\\centering")
-                latex_content.append(f"\\textbf{{\\textcolor{{teamprimary}}{{{all_events[i][0]}}}}}\\par")
-                latex_content.append("\\vspace{0.5em}")
-                latex_content.append(all_events[i][1])
-                latex_content.append("\\end{minipage}")
-                latex_content.append("\\hfill")
-                latex_content.append("\\begin{minipage}[t]{0.48\\textwidth}")
-                latex_content.append("\\centering")
-                latex_content.append(f"\\textbf{{\\textcolor{{teamprimary}}{{{all_events[i+1][0]}}}}}\\par")
-                latex_content.append("\\vspace{0.5em}")
-                latex_content.append(all_events[i+1][1])
-                latex_content.append("\\end{minipage}")
-            else:
-                # Single event
+        # Output events - full-width for special sheets, side-by-side for others
+        if use_full_width:
+            # Output all events as single full-width minipages
+            for idx, (event_name, event_latex) in enumerate(all_events):
+                latex_content.append("\\vspace{1.2em}")
                 latex_content.append("\\noindent\\begin{minipage}[t]{0.98\\textwidth}")
                 latex_content.append("\\centering")
-                latex_content.append(f"\\textbf{{\\textcolor{{teamprimary}}{{{all_events[i][0]}}}}}\\par")
+                latex_content.append(f"\\textbf{{\\textcolor{{teamprimary}}{{{event_name}}}}}\\par")
                 latex_content.append("\\vspace{0.5em}")
-                latex_content.append(all_events[i][1])
+                latex_content.append(event_latex)
                 latex_content.append("\\end{minipage}")
+        else:
+            # Output events in pairs (side by side)
+            for i in range(0, len(all_events), 2):
+                latex_content.append("\\vspace{1.2em}")
+                
+                if i + 1 < len(all_events):
+                    # Two events side by side
+                    latex_content.append("\\noindent\\begin{minipage}[t]{0.48\\textwidth}")
+                    latex_content.append("\\centering")
+                    latex_content.append(f"\\textbf{{\\textcolor{{teamprimary}}{{{all_events[i][0]}}}}}\\par")
+                    latex_content.append("\\vspace{0.5em}")
+                    latex_content.append(all_events[i][1])
+                    latex_content.append("\\end{minipage}")
+                    latex_content.append("\\hfill")
+                    latex_content.append("\\begin{minipage}[t]{0.48\\textwidth}")
+                    latex_content.append("\\centering")
+                    latex_content.append(f"\\textbf{{\\textcolor{{teamprimary}}{{{all_events[i+1][0]}}}}}\\par")
+                    latex_content.append("\\vspace{0.5em}")
+                    latex_content.append(all_events[i+1][1])
+                    latex_content.append("\\end{minipage}")
+                else:
+                    # Single event
+                    latex_content.append("\\noindent\\begin{minipage}[t]{0.98\\textwidth}")
+                    latex_content.append("\\centering")
+                    latex_content.append(f"\\textbf{{\\textcolor{{teamprimary}}{{{all_events[i][0]}}}}}\\par")
+                    latex_content.append("\\vspace{0.5em}")
+                    latex_content.append(all_events[i][1])
+                    latex_content.append("\\end{minipage}")
+                
+                # Add extra spacing after the first row
+                if i == 0:
+                    latex_content.append("\\vspace{0.3em}")
+        
+        # Output full relay events as single full-width minipages
+        for event in relay_events:
+            event_data = section_data[section_data['EVENT'] == event]
+            event_latex = generate_direct_latex_table(event, event_data, is_wide_sheet=use_full_width, sheet_name=sheet_name)
+            
+            latex_content.append("\\vspace{1.2em}")
+            latex_content.append("\\noindent\\begin{minipage}[t]{0.98\\textwidth}")
+            latex_content.append("\\centering")
+            latex_content.append(f"\\textbf{{\\textcolor{{teamprimary}}{{{event}}}}}\\par")
+            latex_content.append("\\vspace{0.5em}")
+            latex_content.append(event_latex)
+            latex_content.append("\\end{minipage}")
         
         print(f"Generated: {sheet_name} - {sex_name} ({len(events)} events)")
     
