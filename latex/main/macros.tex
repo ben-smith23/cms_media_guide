@@ -246,4 +246,133 @@
     \addcontentsline{toc}{section}{\thesection\ #2}
 }
 
+% =============================
+% NEW SECTION TITLE PAGE DESIGNS
+% =============================
+
+% OPTION A: Full-page image with overlay banner
+% Usage: \sectionImageOverlay{path/to/image.jpg}{Section Title}
+\newcommand{\sectionImageOverlay}[2]{%
+    \clearpage
+    \thispagestyle{empty}
+    
+    % Increment section counter
+    \stepcounter{section}
+    \sectionmark{#2}
+    
+    % Full-page image background
+    \begin{tikzpicture}[overlay, remember picture]
+        % Image fills full page height, centered (sides crop naturally)
+        \node[anchor=center, inner sep=0, opacity=0.85] at (current page.center) {
+            \includegraphics[height=\paperheight, keepaspectratio]{#1}
+        };
+        
+        % Dark overlay for contrast
+        \fill[black, opacity=0.3] (current page.north west) rectangle (current page.south east);
+        
+        % Bold banner - lower on page and taller
+        \fill[teamprimary, opacity=0.95] 
+            ($(current page.west) + (0, -6cm)$) rectangle 
+            ($(current page.east) + (0, -2.5cm)$);
+            
+        % Gold accent lines
+        \draw[teamsecondary, line width=4pt] 
+            ($(current page.west) + (0, -2.5cm)$) -- 
+            ($(current page.east) + (0, -2.5cm)$);
+        \draw[teamsecondary, line width=4pt] 
+            ($(current page.west) + (0, -6cm)$) -- 
+            ($(current page.east) + (0, -6cm)$);
+    \end{tikzpicture}
+    
+    \vspace*{0.58\textheight}
+    \begin{center}
+        \begin{minipage}{0.85\textwidth}
+            \centering
+            \textcolor{white}{\fontsize{24pt}{30pt}\selectfont\bfseries\thesection}\\[0.2cm]
+            \textcolor{teamsecondary}{\fontsize{28pt}{34pt}\selectfont\bfseries#2}
+        \end{minipage}
+    \end{center}
+    \vspace*{\fill}
+    
+    \clearpage
+    \addcontentsline{toc}{section}{\thesection\ #2}
+}
+
+% OPTION B: Diagonal split design
+% Usage: \sectionDiagonalSplit{path/to/image.jpg}{Section Title}
+\newcommand{\sectionDiagonalSplit}[2]{%
+    \clearpage
+    \thispagestyle{empty}
+    
+    % Increment section counter
+    \stepcounter{section}
+    \sectionmark{#2}
+    
+    \begin{tikzpicture}[overlay, remember picture]
+        % Diagonal split - maroon fills top-left diagonal
+        \fill[teamprimary] 
+            (current page.north west) -- 
+            (current page.north east) -- 
+            ($(current page.south east) + (-8cm, 0)$) -- 
+            ($(current page.south west) + (0, 8cm)$) -- 
+            cycle;
+        
+        % Image in bottom-right area
+        \node[anchor=south east, inner sep=0] at ($(current page.south east) + (-1cm, 1cm)$) {
+            \includegraphics[width=18cm, height=20cm, keepaspectratio]{#1}
+        };
+        
+        % Gold accent stripe along diagonal
+        \draw[teamsecondary, line width=8pt] 
+            ($(current page.north east) + (0, -3cm)$) -- 
+            ($(current page.south west) + (3cm, 0)$);
+            
+        % Title box in the maroon area
+        \node[anchor=north west, text width=12cm] at ($(current page.north west) + (2.5cm, -5cm)$) {
+            \textcolor{teamsecondary}{\fontsize{72pt}{80pt}\selectfont\bfseries\thesection}\\[0.3cm]
+            \textcolor{white}{\fontsize{48pt}{56pt}\selectfont\bfseries#2}
+        };
+    \end{tikzpicture}
+    
+    \clearpage
+    \addcontentsline{toc}{section}{\thesection\ #2}
+}
+
+% OPTION C: Clean side-by-side split
+% Usage: \sectionSideBySide{path/to/image.jpg}{Section Title}
+\newcommand{\sectionSideBySide}[2]{%
+    \clearpage
+    \thispagestyle{empty}
+    
+    % Increment section counter
+    \stepcounter{section}
+    \sectionmark{#2}
+    
+    \begin{tikzpicture}[overlay, remember picture]
+        % Left half - maroon background
+        \fill[teamprimary] 
+            (current page.north west) rectangle 
+            ($(current page.south) + (0, 0)$);
+        
+        % Right half - image
+        \node[anchor=east, inner sep=0] at ($(current page.east) + (-1cm, 0)$) {
+            \includegraphics[width=0.5\paperwidth, height=\paperheight, keepaspectratio=false]{#1}
+        };
+        
+        % Vertical gold accent stripe
+        \fill[teamsecondary] 
+            ($(current page.north) + (-0.5cm, 0)$) rectangle 
+            ($(current page.south) + (0.5cm, 0)$);
+        
+        % Title on left side
+        \node[anchor=center, text width=10cm, align=center] at ($(current page.west) + (6cm, 0)$) {
+            \textcolor{teamsecondary}{\fontsize{80pt}{88pt}\selectfont\bfseries\thesection}\\[1cm]
+            \textcolor{white}{\fontsize{40pt}{48pt}\selectfont\bfseries#2}
+        };
+    \end{tikzpicture}
+    
+    \clearpage
+    \addcontentsline{toc}{section}{\thesection\ #2}
+}
+
 
