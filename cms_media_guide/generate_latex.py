@@ -112,14 +112,13 @@ def sort_events_by_order(events):
     return sorted(events, key=event_sort_key)
 
 def generate_direct_latex_table(event_name, event_data):
-    """Generate direct LaTeX table code based on available columns"""
+    """Generate direct LaTeX table content (just the tabular, no wrapper)"""
     
     # Sort data appropriately
     if "diving" in event_name.lower() or "meter" in event_name.lower():
         event_data_sorted = event_data.sort_values('TIME', ascending=False)
     else:
         event_data_sorted = event_data.sort_values('TIME', ascending=True)
-    
     
     # Get available columns
     available_columns = detect_available_columns(event_data_sorted)
@@ -128,61 +127,37 @@ def generate_direct_latex_table(event_name, event_data):
     headers = []
     column_spec = "@{}"
     
-    # Check if this is a full relay event for special column sizing
-    is_full_relay = "relay" in event_name.lower() and "spl" not in event_name.lower()
-    
     if 'TIME' in available_columns:
         # Check if this is a diving event (contains "meter" or "Meter")
         if "meter" in event_name.lower() or "Meter" in event_name:
             headers.append("\\textbf{Score}")
         else:
             headers.append("\\textbf{Time}")
-        if is_full_relay:
-            column_spec += "p{1.0cm}"  # Smaller for relays
-        else:
-            column_spec += "p{1.2cm}"
+        column_spec += "p{1.2cm}"
     
     if 'NAME' in available_columns:
         headers.append("\\textbf{Name}")
-        if is_full_relay:
-            column_spec += "p{1.4cm}"  # Smaller for relays
-        else:
-            column_spec += "p{1.8cm}"
+        column_spec += "p{1.8cm}"
     
     if 'YEAR' in available_columns:
         headers.append("\\textbf{Year}")
-        if is_full_relay:
-            column_spec += "p{0.5cm}"  # Smaller for relays
-        else:
-            column_spec += "p{0.6cm}"
+        column_spec += "p{0.6cm}"
     
     if 'SITE' in available_columns:
         headers.append("\\textbf{Site}")
-        if is_full_relay:
-            column_spec += "p{0.6cm}"  # Smaller for relays
-        else:
-            column_spec += "p{0.8cm}"
+        column_spec += "p{0.8cm}"
     
     if 'TEAM' in available_columns:
         headers.append("\\textbf{Team}")
-        if is_full_relay:
-            column_spec += "p{0.6cm}"  # Smaller for relays
-        else:
-            column_spec += "p{0.8cm}"
+        column_spec += "p{0.8cm}"
     
     if 'MEET' in available_columns:
         headers.append("\\textbf{Meet}")
-        if is_full_relay:
-            column_spec += "p{0.6cm}"  # Smaller for relays
-        else:
-            column_spec += "p{0.8cm}"
+        column_spec += "p{0.8cm}"
     
     if 'CONTEXT' in available_columns:
         headers.append("\\textbf{Context}")
-        if is_full_relay:
-            column_spec += "p{1.0cm}"  # Smaller for relays
-        else:
-            column_spec += "p{1.2cm}"
+        column_spec += "p{1.2cm}"
     
     column_spec += "@{}"
     
@@ -216,20 +191,12 @@ def generate_direct_latex_table(event_name, event_data):
     else:
         table_content = table_rows[0] + " \\\\"
     
-    # Check if this should be a minipage (non-full-relay with 12 or fewer rows)
-    # Only exclude full relay events (not relay splits)
-    is_full_relay = "relay" in event_name.lower() and "spl" not in event_name.lower()
-    num_rows = len(table_rows)
-    use_minipage = not is_full_relay and num_rows <= 12
-    
-    if use_minipage:
-        # Generate table content for minipage (without caption, caption will be added separately)
-        latex_table = f"""\\vspace{{0.15em}}
-\\centering
+    # Return just the table content
+    latex_table = f"""\\centering
 \\tiny
+\\renewcommand{{\\arraystretch}}{{0.75}}
+\\setlength{{\\tabcolsep}}{{2pt}}
 \\resizebox{{\\textwidth}}{{!}}{{
-\\renewcommand{{\\arraystretch}}{{0.7}}
-\\setlength{{\\tabcolsep}}{{1pt}}
 \\begin{{tabular}}{{{column_spec}}}
 \\toprule
 {(' & '.join(headers))} \\\\
@@ -238,46 +205,6 @@ def generate_direct_latex_table(event_name, event_data):
 \\bottomrule
 \\end{{tabular}}%
 }}"""
-    else:
-        # Check if this is a full relay event for special formatting
-        is_full_relay = "relay" in event_name.lower() and "spl" not in event_name.lower()
-        
-        if is_full_relay:
-            # Generate ultra-compact full-width table for relay events
-            latex_table = f"""\\begin{{table}}[H]
-\\centering
-\\caption*{{\\textbf{{{event_name}}}}}
-\\fontsize{{3}}{{4}}\\selectfont
-\\resizebox{{\\textwidth}}{{!}}{{
-\\renewcommand{{\\arraystretch}}{{0.2}}
-\\setlength{{\\tabcolsep}}{{0pt}}
-\\begin{{tabular}}{{{column_spec}}}
-\\toprule
-{(' & '.join(headers))} \\\\
-\\midrule
-{table_content}
-\\bottomrule
-\\end{{tabular}}%
-}}
-\\end{{table}}"""
-        else:
-            # Generate full-width table for large non-relay tables
-            latex_table = f"""\\begin{{table}}[H]
-\\centering
-\\caption*{{\\textbf{{{event_name}}}}}
-\\tiny
-\\resizebox{{\\textwidth}}{{!}}{{
-\\renewcommand{{\\arraystretch}}{{0.8}}
-\\setlength{{\\tabcolsep}}{{2pt}}
-\\begin{{tabular}}{{{column_spec}}}
-\\toprule
-{(' & '.join(headers))} \\\\
-\\midrule
-{table_content}
-\\bottomrule
-\\end{{tabular}}%
-}}
-\\end{{table}}"""
     
     return latex_table
 
@@ -310,7 +237,7 @@ def generate_complete_latex(df):
         # Add section header if this is a new section
         if current_section != sheet_name:
             if current_section is not None:
-                latex_content.append("\\vspace{-0.5em}")  # Minimal spacing between sections
+                latex_content.append("\\vspace{-0.5em}")
             # Escape special characters in sheet name for LaTeX
             escaped_sheet_name = escape_latex_special_chars(sheet_name)
             latex_content.append("\\clearpage")
@@ -325,151 +252,40 @@ def generate_complete_latex(df):
         # Group by event and generate tables
         events = sort_events_by_order(section_data['EVENT'].unique())
         
-        # Track minipage tables for grouping (6 tables per page: 2 columns × 3 rows)
-        minipage_tables = []
-        
+        # Collect all events as (name, content) tuples
+        all_events = []
         for event in events:
             event_data = section_data[section_data['EVENT'] == event]
-            
-            # Check if this is a minipage table
-            # Only exclude full relay events (not relay splits)
-            is_full_relay = "relay" in event.lower() and "spl" not in event.lower()
-            num_rows = len(event_data)
-            use_minipage = not is_full_relay and num_rows <= 12
-            
-            if use_minipage:
-                # Generate LaTeX table dynamically
-                event_latex = generate_direct_latex_table(event, event_data)
-                minipage_tables.append((event, event_latex))
-                
-                # If we have 6 minipage tables, output them in 2×3 grid
-                if len(minipage_tables) == 6:
-                    # Row 1
-                    latex_content.append("\\noindent\\begin{minipage}[t]{0.48\\textwidth}")
-                    latex_content.append("\\centering")
-                    latex_content.append(f"\\textbf{{\\textcolor{{teamprimary}}{{{minipage_tables[0][0]}}}}}")
-                    latex_content.append("\\vspace{0.4em}")
-                    latex_content.append(minipage_tables[0][1])
-                    latex_content.append("\\end{minipage}")
-                    latex_content.append("\\hfill")
-                    latex_content.append("\\begin{minipage}[t]{0.48\\textwidth}")
-                    latex_content.append("\\centering")
-                    latex_content.append(f"\\textbf{{\\textcolor{{teamprimary}}{{{minipage_tables[1][0]}}}}}")
-                    latex_content.append("\\vspace{0.4em}")
-                    latex_content.append(minipage_tables[1][1])
-                    latex_content.append("\\end{minipage}")
-                    latex_content.append("")
-                    latex_content.append("\\vspace{0.3em}")
-                    
-                    # Row 2
-                    latex_content.append("\\noindent\\begin{minipage}[t]{0.48\\textwidth}")
-                    latex_content.append("\\centering")
-                    latex_content.append(f"\\textbf{{\\textcolor{{teamprimary}}{{{minipage_tables[2][0]}}}}}")
-                    latex_content.append("\\vspace{0.4em}")
-                    latex_content.append(minipage_tables[2][1])
-                    latex_content.append("\\end{minipage}")
-                    latex_content.append("\\hfill")
-                    latex_content.append("\\begin{minipage}[t]{0.48\\textwidth}")
-                    latex_content.append("\\centering")
-                    latex_content.append(f"\\textbf{{\\textcolor{{teamprimary}}{{{minipage_tables[3][0]}}}}}")
-                    latex_content.append("\\vspace{0.4em}")
-                    latex_content.append(minipage_tables[3][1])
-                    latex_content.append("\\end{minipage}")
-                    latex_content.append("")
-                    latex_content.append("\\vspace{0.3em}")
-                    
-                    # Row 3
-                    latex_content.append("\\noindent\\begin{minipage}[t]{0.48\\textwidth}")
-                    latex_content.append("\\centering")
-                    latex_content.append(f"\\textbf{{\\textcolor{{teamprimary}}{{{minipage_tables[4][0]}}}}}")
-                    latex_content.append("\\vspace{0.4em}")
-                    latex_content.append(minipage_tables[4][1])
-                    latex_content.append("\\end{minipage}")
-                    latex_content.append("\\hfill")
-                    latex_content.append("\\begin{minipage}[t]{0.48\\textwidth}")
-                    latex_content.append("\\centering")
-                    latex_content.append(f"\\textbf{{\\textcolor{{teamprimary}}{{{minipage_tables[5][0]}}}}}")
-                    latex_content.append("\\vspace{0.4em}")
-                    latex_content.append(minipage_tables[5][1])
-                    latex_content.append("\\end{minipage}")
-                    latex_content.append("")
-                    latex_content.append("\\vspace{0.5em}")
-                    minipage_tables = []
-            else:
-                # If we have leftover minipage tables, output them in remaining grid positions
-                if minipage_tables:
-                    # Output remaining tables in pairs (2 columns)
-                    for i in range(0, len(minipage_tables), 2):
-                        if i + 1 < len(minipage_tables):
-                            # Two tables side by side
-                            latex_content.append("\\noindent\\begin{minipage}[t]{0.48\\textwidth}")
-                            latex_content.append("\\centering")
-                            latex_content.append(f"\\textbf{{\\textcolor{{teamprimary}}{{{minipage_tables[i][0]}}}}}")
-                            latex_content.append("\\vspace{0.4em}")
-                            latex_content.append(minipage_tables[i][1])
-                            latex_content.append("\\end{minipage}")
-                            latex_content.append("\\hfill")
-                            latex_content.append("\\begin{minipage}[t]{0.48\\textwidth}")
-                            latex_content.append("\\centering")
-                            latex_content.append(f"\\textbf{{\\textcolor{{teamprimary}}{{{minipage_tables[i+1][0]}}}}}")
-                            latex_content.append("\\vspace{0.4em}")
-                            latex_content.append(minipage_tables[i+1][1])
-                            latex_content.append("\\end{minipage}")
-                            latex_content.append("")
-                            latex_content.append("\\vspace{0.3em}")
-                        else:
-                            # Single table
-                            latex_content.append("\\noindent\\begin{minipage}[t]{0.48\\textwidth}")
-                            latex_content.append("\\centering")
-                            latex_content.append(f"\\textbf{{\\textcolor{{teamprimary}}{{{minipage_tables[i][0]}}}}}")
-                            latex_content.append("\\vspace{0.4em}")
-                            latex_content.append(minipage_tables[i][1])
-                            latex_content.append("\\end{minipage}")
-                            latex_content.append("")
-                            latex_content.append("\\vspace{0.3em}")
-                    latex_content.append("\\vspace{0.5em}")
-                    minipage_tables = []
-                
-                # Generate LaTeX table dynamically (this includes the caption for relay events)
-                event_latex = generate_direct_latex_table(event, event_data)
-                
-                # Add full-width table
-                latex_content.append(event_latex)
-                latex_content.append("")
-                latex_content.append("\\vspace{0.5em}")
+            event_latex = generate_direct_latex_table(event, event_data)
+            all_events.append((event, event_latex))
         
-        # Handle any remaining minipage tables
-        if minipage_tables:
-            # Output remaining tables in pairs (2 columns)
-            for i in range(0, len(minipage_tables), 2):
-                if i + 1 < len(minipage_tables):
-                    # Two tables side by side
-                    latex_content.append("\\noindent\\begin{minipage}[t]{0.48\\textwidth}")
-                    latex_content.append("\\centering")
-                    latex_content.append(f"\\textbf{{\\textcolor{{teamprimary}}{{{minipage_tables[i][0]}}}}}")
-                    latex_content.append("\\vspace{0.4em}")
-                    latex_content.append(minipage_tables[i][1])
-                    latex_content.append("\\end{minipage}")
-                    latex_content.append("\\hfill")
-                    latex_content.append("\\begin{minipage}[t]{0.48\\textwidth}")
-                    latex_content.append("\\centering")
-                    latex_content.append(f"\\textbf{{\\textcolor{{teamprimary}}{{{minipage_tables[i+1][0]}}}}}")
-                    latex_content.append("\\vspace{0.4em}")
-                    latex_content.append(minipage_tables[i+1][1])
-                    latex_content.append("\\end{minipage}")
-                    latex_content.append("")
-                    latex_content.append("\\vspace{0.3em}")
-                else:
-                    # Single table
-                    latex_content.append("\\noindent\\begin{minipage}[t]{0.48\\textwidth}")
-                    latex_content.append("\\centering")
-                    latex_content.append(f"\\textbf{{\\textcolor{{teamprimary}}{{{minipage_tables[i][0]}}}}}")
-                    latex_content.append("\\vspace{0.4em}")
-                    latex_content.append(minipage_tables[i][1])
-                    latex_content.append("\\end{minipage}")
-                    latex_content.append("")
-                    latex_content.append("\\vspace{0.3em}")
-            latex_content.append("\\vspace{0.5em}")
+        # Output events in pairs (side by side)
+        for i in range(0, len(all_events), 2):
+            latex_content.append("\\vspace{0.8em}")
+            
+            if i + 1 < len(all_events):
+                # Two events side by side
+                latex_content.append("\\noindent\\begin{minipage}[t]{0.48\\textwidth}")
+                latex_content.append("\\centering")
+                latex_content.append(f"\\textbf{{\\textcolor{{teamprimary}}{{{all_events[i][0]}}}}}\\par")
+                latex_content.append("\\vspace{0.5em}")
+                latex_content.append(all_events[i][1])
+                latex_content.append("\\end{minipage}")
+                latex_content.append("\\hfill")
+                latex_content.append("\\begin{minipage}[t]{0.48\\textwidth}")
+                latex_content.append("\\centering")
+                latex_content.append(f"\\textbf{{\\textcolor{{teamprimary}}{{{all_events[i+1][0]}}}}}\\par")
+                latex_content.append("\\vspace{0.5em}")
+                latex_content.append(all_events[i+1][1])
+                latex_content.append("\\end{minipage}")
+            else:
+                # Single event
+                latex_content.append("\\noindent\\begin{minipage}[t]{0.98\\textwidth}")
+                latex_content.append("\\centering")
+                latex_content.append(f"\\textbf{{\\textcolor{{teamprimary}}{{{all_events[i][0]}}}}}\\par")
+                latex_content.append("\\vspace{0.5em}")
+                latex_content.append(all_events[i][1])
+                latex_content.append("\\end{minipage}")
         
         print(f"Generated: {sheet_name} - {sex_name} ({len(events)} events)")
     
